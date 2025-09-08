@@ -1189,12 +1189,7 @@ namespace SmartBatteryHack
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ReadBatteryDataButton_Click(object sender, EventArgs e)
         {
             List<byte> packet = new List<byte>();
             byte reg = 0;
@@ -1221,9 +1216,10 @@ namespace SmartBatteryHack
                 packet.Add(checksum);
 
                 byte[] ReadBlockData = packet.ToArray();
-                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Read block data", ReadBlockData);
+                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Read Chip Data", ReadBlockData);
                 Serial.Write(ReadBlockData, 0, ReadBlockData.Length);
             }
         }
+
     }
 }

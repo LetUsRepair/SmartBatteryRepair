@@ -28,6 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.DebugGroupBox = new System.Windows.Forms.GroupBox();
+            this.ReadROMDescriptionLabel = new System.Windows.Forms.Label();
+            this.ReadROMByBytesCheckBox = new System.Windows.Forms.CheckBox();
+            this.ReadROMButton = new System.Windows.Forms.Button();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.WordByteOrderOKButton = new System.Windows.Forms.Button();
+            this.WordByteOrderLabel = new System.Windows.Forms.Label();
+            this.WordByteOrderComboBox = new System.Windows.Forms.ComboBox();
+            this.SMBusAddressSelectButton = new System.Windows.Forms.Button();
+            this.SMBusAddressComboBox = new System.Windows.Forms.ComboBox();
+            this.DashLabel = new System.Windows.Forms.Label();
+            this.RegEndTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.RegStartTextBox = new System.Windows.Forms.TextBox();
+            this.SMBusRegisterDumpButton = new System.Windows.Forms.Button();
+            this.ScanSMBusButton = new System.Windows.Forms.Button();
+            this.WriteDataTextBox = new System.Windows.Forms.TextBox();
+            this.WriteBlockButton = new System.Windows.Forms.Button();
+            this.WriteWordButton = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.WriteByteButton = new System.Windows.Forms.Button();
+            this.WriteRegisterComboBox = new System.Windows.Forms.ComboBox();
+            this.WriteLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ReadBatteryDataButton = new System.Windows.Forms.Button();
+            this.ChipNameText = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.RegisterLabelWrite = new System.Windows.Forms.Label();
             this.ControlGroupBox = new System.Windows.Forms.GroupBox();
             this.StatusButton = new System.Windows.Forms.Button();
             this.ResetButton = new System.Windows.Forms.Button();
@@ -38,197 +78,133 @@
             this.SendButton = new System.Windows.Forms.Button();
             this.SendComboBox = new System.Windows.Forms.ComboBox();
             this.CommunicationTextBox = new System.Windows.Forms.TextBox();
+            this.RegisterLabelRead = new System.Windows.Forms.Label();
             this.ToolsGroupBox = new System.Windows.Forms.GroupBox();
-            this.WordByteOrderOKButton = new System.Windows.Forms.Button();
-            this.WordByteOrderLabel = new System.Windows.Forms.Label();
-            this.WordByteOrderComboBox = new System.Windows.Forms.ComboBox();
-            this.SMBusAddressSelectButton = new System.Windows.Forms.Button();
-            this.SMBusAddressComboBox = new System.Windows.Forms.ComboBox();
-            this.DashLabel = new System.Windows.Forms.Label();
-            this.RegEndTextBox = new System.Windows.Forms.TextBox();
-            this.RegStartTextBox = new System.Windows.Forms.TextBox();
-            this.SMBusRegisterDumpButton = new System.Windows.Forms.Button();
-            this.ScanSMBusButton = new System.Windows.Forms.Button();
-            this.WriteDataTextBox = new System.Windows.Forms.TextBox();
-            this.WriteBlockButton = new System.Windows.Forms.Button();
-            this.WriteWordButton = new System.Windows.Forms.Button();
-            this.WriteByteButton = new System.Windows.Forms.Button();
-            this.WriteRegisterComboBox = new System.Windows.Forms.ComboBox();
-            this.WriteLabel = new System.Windows.Forms.Label();
-            this.RegisterLabelWrite = new System.Windows.Forms.Label();
             this.ReadDataTextBox = new System.Windows.Forms.TextBox();
             this.ReadBlockButton = new System.Windows.Forms.Button();
             this.ReadWordButton = new System.Windows.Forms.Button();
             this.ReadByteButton = new System.Windows.Forms.Button();
             this.ReadRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.ReadLabel = new System.Windows.Forms.Label();
-            this.RegisterLabelRead = new System.Windows.Forms.Label();
-            this.MenuStrip = new System.Windows.Forms.MenuStrip();
-            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DebugGroupBox = new System.Windows.Forms.GroupBox();
-            this.ReadROMDescriptionLabel = new System.Windows.Forms.Label();
-            this.ReadROMByBytesCheckBox = new System.Windows.Forms.CheckBox();
-            this.ReadROMButton = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ChipNameText = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.DebugGroupBox.SuspendLayout();
+            this.MenuStrip.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.ControlGroupBox.SuspendLayout();
             this.CommunicationGroupBox.SuspendLayout();
             this.ToolsGroupBox.SuspendLayout();
-            this.MenuStrip.SuspendLayout();
-            this.DebugGroupBox.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ControlGroupBox
+            // tabControl1
             // 
-            this.ControlGroupBox.Controls.Add(this.StatusButton);
-            this.ControlGroupBox.Controls.Add(this.ResetButton);
-            this.ControlGroupBox.Controls.Add(this.RefreshButton);
-            this.ControlGroupBox.Controls.Add(this.COMPortsComboBox);
-            this.ControlGroupBox.Controls.Add(this.ConnectButton);
-            this.ControlGroupBox.Location = new System.Drawing.Point(12, 468);
-            this.ControlGroupBox.Name = "ControlGroupBox";
-            this.ControlGroupBox.Size = new System.Drawing.Size(365, 57);
-            this.ControlGroupBox.TabIndex = 5;
-            this.ControlGroupBox.TabStop = false;
-            this.ControlGroupBox.Text = "Control";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 60);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(975, 751);
+            this.tabControl1.TabIndex = 0;
             // 
-            // StatusButton
+            // tabPage1
             // 
-            this.StatusButton.Enabled = false;
-            this.StatusButton.Location = new System.Drawing.Point(251, 19);
-            this.StatusButton.Name = "StatusButton";
-            this.StatusButton.Size = new System.Drawing.Size(50, 25);
-            this.StatusButton.TabIndex = 4;
-            this.StatusButton.Text = "Status";
-            this.StatusButton.UseVisualStyleBackColor = true;
-            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
+            this.tabPage1.Controls.Add(this.DebugGroupBox);
+            this.tabPage1.Controls.Add(this.MenuStrip);
+            this.tabPage1.Controls.Add(this.statusStrip1);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.ControlGroupBox);
+            this.tabPage1.Controls.Add(this.CommunicationGroupBox);
+            this.tabPage1.Controls.Add(this.ToolsGroupBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(967, 725);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // ResetButton
+            // tabPage2
             // 
-            this.ResetButton.Enabled = false;
-            this.ResetButton.Location = new System.Drawing.Point(306, 19);
-            this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(50, 25);
-            this.ResetButton.TabIndex = 3;
-            this.ResetButton.Text = "Reset";
-            this.ResetButton.UseVisualStyleBackColor = true;
-            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // RefreshButton
+            // DebugGroupBox
             // 
-            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.RefreshButton.Location = new System.Drawing.Point(156, 19);
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Size = new System.Drawing.Size(55, 25);
-            this.RefreshButton.TabIndex = 2;
-            this.RefreshButton.Text = "Refresh";
-            this.RefreshButton.UseVisualStyleBackColor = true;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            this.DebugGroupBox.Controls.Add(this.ReadROMDescriptionLabel);
+            this.DebugGroupBox.Controls.Add(this.ReadROMByBytesCheckBox);
+            this.DebugGroupBox.Controls.Add(this.ReadROMButton);
+            this.DebugGroupBox.Location = new System.Drawing.Point(390, 298);
+            this.DebugGroupBox.Name = "DebugGroupBox";
+            this.DebugGroupBox.Size = new System.Drawing.Size(321, 227);
+            this.DebugGroupBox.TabIndex = 15;
+            this.DebugGroupBox.TabStop = false;
+            this.DebugGroupBox.Text = "Debug";
             // 
-            // COMPortsComboBox
+            // ReadROMDescriptionLabel
             // 
-            this.COMPortsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COMPortsComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.COMPortsComboBox.FormattingEnabled = true;
-            this.COMPortsComboBox.Location = new System.Drawing.Point(90, 20);
-            this.COMPortsComboBox.Name = "COMPortsComboBox";
-            this.COMPortsComboBox.Size = new System.Drawing.Size(60, 23);
-            this.COMPortsComboBox.TabIndex = 1;
-            this.COMPortsComboBox.SelectedIndexChanged += new System.EventHandler(this.COMPortsComboBox_SelectedIndexChanged);
+            this.ReadROMDescriptionLabel.AutoSize = true;
+            this.ReadROMDescriptionLabel.Location = new System.Drawing.Point(6, 46);
+            this.ReadROMDescriptionLabel.Name = "ReadROMDescriptionLabel";
+            this.ReadROMDescriptionLabel.Size = new System.Drawing.Size(307, 13);
+            this.ReadROMDescriptionLabel.TabIndex = 2;
+            this.ReadROMDescriptionLabel.Text = "Read interval: 0x0000-0x07FF, 0x4000-0x47FF, 0x8000-0x87FF";
             // 
-            // ConnectButton
+            // ReadROMByBytesCheckBox
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(9, 19);
-            this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(75, 25);
-            this.ConnectButton.TabIndex = 0;
-            this.ConnectButton.Text = "Connect";
-            this.ConnectButton.UseVisualStyleBackColor = true;
-            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
+            this.ReadROMByBytesCheckBox.AutoSize = true;
+            this.ReadROMByBytesCheckBox.Location = new System.Drawing.Point(89, 24);
+            this.ReadROMByBytesCheckBox.Name = "ReadROMByBytesCheckBox";
+            this.ReadROMByBytesCheckBox.Size = new System.Drawing.Size(195, 17);
+            this.ReadROMByBytesCheckBox.TabIndex = 1;
+            this.ReadROMByBytesCheckBox.Text = "Read ROM by bytes (default: block)";
+            this.ReadROMByBytesCheckBox.UseVisualStyleBackColor = true;
             // 
-            // CommunicationGroupBox
+            // ReadROMButton
             // 
-            this.CommunicationGroupBox.Controls.Add(this.SendButton);
-            this.CommunicationGroupBox.Controls.Add(this.SendComboBox);
-            this.CommunicationGroupBox.Controls.Add(this.CommunicationTextBox);
-            this.CommunicationGroupBox.Location = new System.Drawing.Point(11, 27);
-            this.CommunicationGroupBox.Name = "CommunicationGroupBox";
-            this.CommunicationGroupBox.Size = new System.Drawing.Size(700, 265);
-            this.CommunicationGroupBox.TabIndex = 4;
-            this.CommunicationGroupBox.TabStop = false;
-            this.CommunicationGroupBox.Text = "Communication";
+            this.ReadROMButton.Location = new System.Drawing.Point(8, 20);
+            this.ReadROMButton.Name = "ReadROMButton";
+            this.ReadROMButton.Size = new System.Drawing.Size(75, 23);
+            this.ReadROMButton.TabIndex = 0;
+            this.ReadROMButton.Text = "Read ROM";
+            this.ReadROMButton.UseVisualStyleBackColor = true;
             // 
-            // SendButton
+            // MenuStrip
             // 
-            this.SendButton.Location = new System.Drawing.Point(647, 237);
-            this.SendButton.Name = "SendButton";
-            this.SendButton.Size = new System.Drawing.Size(51, 25);
-            this.SendButton.TabIndex = 2;
-            this.SendButton.Text = "Send";
-            this.SendButton.UseVisualStyleBackColor = true;
-            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutToolStripMenuItem});
+            this.MenuStrip.Location = new System.Drawing.Point(3, 3);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(961, 24);
+            this.MenuStrip.TabIndex = 14;
+            this.MenuStrip.Text = "menuStrip1";
             // 
-            // SendComboBox
+            // AboutToolStripMenuItem
             // 
-            this.SendComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SendComboBox.FormattingEnabled = true;
-            this.SendComboBox.Location = new System.Drawing.Point(3, 238);
-            this.SendComboBox.Name = "SendComboBox";
-            this.SendComboBox.Size = new System.Drawing.Size(643, 23);
-            this.SendComboBox.TabIndex = 1;
-            this.SendComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SendComboBox_KeyPress);
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.AboutToolStripMenuItem.Text = "About";
             // 
-            // CommunicationTextBox
+            // statusStrip1
             // 
-            this.CommunicationTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.CommunicationTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CommunicationTextBox.Location = new System.Drawing.Point(3, 16);
-            this.CommunicationTextBox.Multiline = true;
-            this.CommunicationTextBox.Name = "CommunicationTextBox";
-            this.CommunicationTextBox.ReadOnly = true;
-            this.CommunicationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CommunicationTextBox.Size = new System.Drawing.Size(694, 220);
-            this.CommunicationTextBox.TabIndex = 0;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 700);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(961, 22);
+            this.statusStrip1.TabIndex = 16;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // ToolsGroupBox
+            // toolStripStatusLabel1
             // 
-            this.ToolsGroupBox.Controls.Add(this.WordByteOrderOKButton);
-            this.ToolsGroupBox.Controls.Add(this.WordByteOrderLabel);
-            this.ToolsGroupBox.Controls.Add(this.WordByteOrderComboBox);
-            this.ToolsGroupBox.Controls.Add(this.SMBusAddressSelectButton);
-            this.ToolsGroupBox.Controls.Add(this.SMBusAddressComboBox);
-            this.ToolsGroupBox.Controls.Add(this.DashLabel);
-            this.ToolsGroupBox.Controls.Add(this.RegEndTextBox);
-            this.ToolsGroupBox.Controls.Add(this.RegStartTextBox);
-            this.ToolsGroupBox.Controls.Add(this.SMBusRegisterDumpButton);
-            this.ToolsGroupBox.Controls.Add(this.ScanSMBusButton);
-            this.ToolsGroupBox.Controls.Add(this.WriteDataTextBox);
-            this.ToolsGroupBox.Controls.Add(this.WriteBlockButton);
-            this.ToolsGroupBox.Controls.Add(this.WriteWordButton);
-            this.ToolsGroupBox.Controls.Add(this.WriteByteButton);
-            this.ToolsGroupBox.Controls.Add(this.WriteRegisterComboBox);
-            this.ToolsGroupBox.Controls.Add(this.WriteLabel);
-            this.ToolsGroupBox.Controls.Add(this.RegisterLabelWrite);
-            this.ToolsGroupBox.Controls.Add(this.ReadDataTextBox);
-            this.ToolsGroupBox.Controls.Add(this.ReadBlockButton);
-            this.ToolsGroupBox.Controls.Add(this.ReadWordButton);
-            this.ToolsGroupBox.Controls.Add(this.ReadByteButton);
-            this.ToolsGroupBox.Controls.Add(this.ReadRegisterComboBox);
-            this.ToolsGroupBox.Controls.Add(this.ReadLabel);
-            this.ToolsGroupBox.Controls.Add(this.RegisterLabelRead);
-            this.ToolsGroupBox.Enabled = false;
-            this.ToolsGroupBox.Location = new System.Drawing.Point(12, 298);
-            this.ToolsGroupBox.Name = "ToolsGroupBox";
-            this.ToolsGroupBox.Size = new System.Drawing.Size(365, 164);
-            this.ToolsGroupBox.TabIndex = 6;
-            this.ToolsGroupBox.TabStop = false;
-            this.ToolsGroupBox.Text = "Tools";
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
+            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
             // WordByteOrderOKButton
             // 
@@ -238,7 +214,6 @@
             this.WordByteOrderOKButton.TabIndex = 5;
             this.WordByteOrderOKButton.Text = "OK";
             this.WordByteOrderOKButton.UseVisualStyleBackColor = true;
-            this.WordByteOrderOKButton.Click += new System.EventHandler(this.WordByteOrderOKButton_Click);
             // 
             // WordByteOrderLabel
             // 
@@ -272,7 +247,6 @@
             this.SMBusAddressSelectButton.TabIndex = 27;
             this.SMBusAddressSelectButton.Text = "Select Address";
             this.SMBusAddressSelectButton.UseVisualStyleBackColor = true;
-            this.SMBusAddressSelectButton.Click += new System.EventHandler(this.SMBusAddressSelectButton_Click);
             // 
             // SMBusAddressComboBox
             // 
@@ -305,7 +279,31 @@
             this.RegEndTextBox.Size = new System.Drawing.Size(23, 23);
             this.RegEndTextBox.TabIndex = 24;
             this.RegEndTextBox.Text = "FF";
-            this.RegEndTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegEndTextBox_KeyPress);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 124);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Chip";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(98, 94);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(131, 20);
+            this.textBox3.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Chip";
             // 
             // RegStartTextBox
             // 
@@ -317,7 +315,6 @@
             this.RegStartTextBox.Size = new System.Drawing.Size(23, 23);
             this.RegStartTextBox.TabIndex = 23;
             this.RegStartTextBox.Text = "00";
-            this.RegStartTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegStartTextBox_KeyPress);
             // 
             // SMBusRegisterDumpButton
             // 
@@ -327,7 +324,6 @@
             this.SMBusRegisterDumpButton.TabIndex = 22;
             this.SMBusRegisterDumpButton.Text = "Dump Registers";
             this.SMBusRegisterDumpButton.UseVisualStyleBackColor = true;
-            this.SMBusRegisterDumpButton.Click += new System.EventHandler(this.SMBusRegisterDumpButton_Click);
             // 
             // ScanSMBusButton
             // 
@@ -337,7 +333,6 @@
             this.ScanSMBusButton.TabIndex = 5;
             this.ScanSMBusButton.Text = "Scan SMBus";
             this.ScanSMBusButton.UseVisualStyleBackColor = true;
-            this.ScanSMBusButton.Click += new System.EventHandler(this.ScanSMBusButton_Click);
             // 
             // WriteDataTextBox
             // 
@@ -348,7 +343,6 @@
             this.WriteDataTextBox.Name = "WriteDataTextBox";
             this.WriteDataTextBox.Size = new System.Drawing.Size(69, 23);
             this.WriteDataTextBox.TabIndex = 18;
-            this.WriteDataTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WriteDataTextBox_KeyPress);
             // 
             // WriteBlockButton
             // 
@@ -358,7 +352,6 @@
             this.WriteBlockButton.TabIndex = 17;
             this.WriteBlockButton.Text = "block";
             this.WriteBlockButton.UseVisualStyleBackColor = true;
-            this.WriteBlockButton.Click += new System.EventHandler(this.WriteBlockButton_Click);
             // 
             // WriteWordButton
             // 
@@ -368,7 +361,31 @@
             this.WriteWordButton.TabIndex = 16;
             this.WriteWordButton.Text = "word";
             this.WriteWordButton.UseVisualStyleBackColor = true;
-            this.WriteWordButton.Click += new System.EventHandler(this.WriteWordButton_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(98, 68);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(131, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Chip";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 46);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Chip";
             // 
             // WriteByteButton
             // 
@@ -378,7 +395,6 @@
             this.WriteByteButton.TabIndex = 14;
             this.WriteByteButton.Text = "byte";
             this.WriteByteButton.UseVisualStyleBackColor = true;
-            this.WriteByteButton.Click += new System.EventHandler(this.WriteByteButton_Click);
             // 
             // WriteRegisterComboBox
             // 
@@ -390,7 +406,6 @@
             this.WriteRegisterComboBox.Name = "WriteRegisterComboBox";
             this.WriteRegisterComboBox.Size = new System.Drawing.Size(38, 23);
             this.WriteRegisterComboBox.TabIndex = 13;
-            this.WriteRegisterComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.WriteRegisterComboBox_KeyPress);
             // 
             // WriteLabel
             // 
@@ -401,6 +416,65 @@
             this.WriteLabel.TabIndex = 15;
             this.WriteLabel.Text = "Write:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.ReadBatteryDataButton);
+            this.groupBox1.Controls.Add(this.ChipNameText);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(721, 25);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(238, 186);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Battery Data";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(98, 120);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(131, 20);
+            this.textBox4.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(98, 42);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(131, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // ReadBatteryDataButton
+            // 
+            this.ReadBatteryDataButton.Location = new System.Drawing.Point(55, 153);
+            this.ReadBatteryDataButton.Name = "ReadBatteryDataButton";
+            this.ReadBatteryDataButton.Size = new System.Drawing.Size(112, 23);
+            this.ReadBatteryDataButton.TabIndex = 2;
+            this.ReadBatteryDataButton.Text = "Read Battery Data";
+            this.ReadBatteryDataButton.UseVisualStyleBackColor = true;
+            // 
+            // ChipNameText
+            // 
+            this.ChipNameText.Location = new System.Drawing.Point(98, 16);
+            this.ChipNameText.Name = "ChipNameText";
+            this.ChipNameText.Size = new System.Drawing.Size(131, 20);
+            this.ChipNameText.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Chip";
+            // 
             // RegisterLabelWrite
             // 
             this.RegisterLabelWrite.AutoSize = true;
@@ -409,6 +483,154 @@
             this.RegisterLabelWrite.Size = new System.Drawing.Size(49, 13);
             this.RegisterLabelWrite.TabIndex = 12;
             this.RegisterLabelWrite.Text = "Register:";
+            // 
+            // ControlGroupBox
+            // 
+            this.ControlGroupBox.Controls.Add(this.StatusButton);
+            this.ControlGroupBox.Controls.Add(this.ResetButton);
+            this.ControlGroupBox.Controls.Add(this.RefreshButton);
+            this.ControlGroupBox.Controls.Add(this.COMPortsComboBox);
+            this.ControlGroupBox.Controls.Add(this.ConnectButton);
+            this.ControlGroupBox.Location = new System.Drawing.Point(12, 468);
+            this.ControlGroupBox.Name = "ControlGroupBox";
+            this.ControlGroupBox.Size = new System.Drawing.Size(365, 57);
+            this.ControlGroupBox.TabIndex = 12;
+            this.ControlGroupBox.TabStop = false;
+            this.ControlGroupBox.Text = "Control";
+            // 
+            // StatusButton
+            // 
+            this.StatusButton.Enabled = false;
+            this.StatusButton.Location = new System.Drawing.Point(251, 19);
+            this.StatusButton.Name = "StatusButton";
+            this.StatusButton.Size = new System.Drawing.Size(50, 25);
+            this.StatusButton.TabIndex = 4;
+            this.StatusButton.Text = "Status";
+            this.StatusButton.UseVisualStyleBackColor = true;
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Enabled = false;
+            this.ResetButton.Location = new System.Drawing.Point(306, 19);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(50, 25);
+            this.ResetButton.TabIndex = 3;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseVisualStyleBackColor = true;
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.RefreshButton.Location = new System.Drawing.Point(156, 19);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(55, 25);
+            this.RefreshButton.TabIndex = 2;
+            this.RefreshButton.Text = "Refresh";
+            this.RefreshButton.UseVisualStyleBackColor = true;
+            // 
+            // COMPortsComboBox
+            // 
+            this.COMPortsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.COMPortsComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.COMPortsComboBox.FormattingEnabled = true;
+            this.COMPortsComboBox.Location = new System.Drawing.Point(90, 20);
+            this.COMPortsComboBox.Name = "COMPortsComboBox";
+            this.COMPortsComboBox.Size = new System.Drawing.Size(60, 23);
+            this.COMPortsComboBox.TabIndex = 1;
+            // 
+            // ConnectButton
+            // 
+            this.ConnectButton.Location = new System.Drawing.Point(9, 19);
+            this.ConnectButton.Name = "ConnectButton";
+            this.ConnectButton.Size = new System.Drawing.Size(75, 25);
+            this.ConnectButton.TabIndex = 0;
+            this.ConnectButton.Text = "Connect";
+            this.ConnectButton.UseVisualStyleBackColor = true;
+            // 
+            // CommunicationGroupBox
+            // 
+            this.CommunicationGroupBox.Controls.Add(this.SendButton);
+            this.CommunicationGroupBox.Controls.Add(this.SendComboBox);
+            this.CommunicationGroupBox.Controls.Add(this.CommunicationTextBox);
+            this.CommunicationGroupBox.Location = new System.Drawing.Point(11, 27);
+            this.CommunicationGroupBox.Name = "CommunicationGroupBox";
+            this.CommunicationGroupBox.Size = new System.Drawing.Size(700, 265);
+            this.CommunicationGroupBox.TabIndex = 11;
+            this.CommunicationGroupBox.TabStop = false;
+            this.CommunicationGroupBox.Text = "Communication";
+            // 
+            // SendButton
+            // 
+            this.SendButton.Location = new System.Drawing.Point(647, 237);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(51, 25);
+            this.SendButton.TabIndex = 2;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            // 
+            // SendComboBox
+            // 
+            this.SendComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SendComboBox.FormattingEnabled = true;
+            this.SendComboBox.Location = new System.Drawing.Point(3, 238);
+            this.SendComboBox.Name = "SendComboBox";
+            this.SendComboBox.Size = new System.Drawing.Size(643, 23);
+            this.SendComboBox.TabIndex = 1;
+            // 
+            // CommunicationTextBox
+            // 
+            this.CommunicationTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.CommunicationTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CommunicationTextBox.Location = new System.Drawing.Point(3, 16);
+            this.CommunicationTextBox.Multiline = true;
+            this.CommunicationTextBox.Name = "CommunicationTextBox";
+            this.CommunicationTextBox.ReadOnly = true;
+            this.CommunicationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.CommunicationTextBox.Size = new System.Drawing.Size(694, 220);
+            this.CommunicationTextBox.TabIndex = 0;
+            // 
+            // RegisterLabelRead
+            // 
+            this.RegisterLabelRead.AutoSize = true;
+            this.RegisterLabelRead.Location = new System.Drawing.Point(7, 55);
+            this.RegisterLabelRead.Name = "RegisterLabelRead";
+            this.RegisterLabelRead.Size = new System.Drawing.Size(49, 13);
+            this.RegisterLabelRead.TabIndex = 1;
+            this.RegisterLabelRead.Text = "Register:";
+            // 
+            // ToolsGroupBox
+            // 
+            this.ToolsGroupBox.Controls.Add(this.WordByteOrderOKButton);
+            this.ToolsGroupBox.Controls.Add(this.WordByteOrderLabel);
+            this.ToolsGroupBox.Controls.Add(this.WordByteOrderComboBox);
+            this.ToolsGroupBox.Controls.Add(this.SMBusAddressSelectButton);
+            this.ToolsGroupBox.Controls.Add(this.SMBusAddressComboBox);
+            this.ToolsGroupBox.Controls.Add(this.DashLabel);
+            this.ToolsGroupBox.Controls.Add(this.RegEndTextBox);
+            this.ToolsGroupBox.Controls.Add(this.RegStartTextBox);
+            this.ToolsGroupBox.Controls.Add(this.SMBusRegisterDumpButton);
+            this.ToolsGroupBox.Controls.Add(this.ScanSMBusButton);
+            this.ToolsGroupBox.Controls.Add(this.WriteDataTextBox);
+            this.ToolsGroupBox.Controls.Add(this.WriteBlockButton);
+            this.ToolsGroupBox.Controls.Add(this.WriteWordButton);
+            this.ToolsGroupBox.Controls.Add(this.WriteByteButton);
+            this.ToolsGroupBox.Controls.Add(this.WriteRegisterComboBox);
+            this.ToolsGroupBox.Controls.Add(this.WriteLabel);
+            this.ToolsGroupBox.Controls.Add(this.RegisterLabelWrite);
+            this.ToolsGroupBox.Controls.Add(this.ReadDataTextBox);
+            this.ToolsGroupBox.Controls.Add(this.ReadBlockButton);
+            this.ToolsGroupBox.Controls.Add(this.ReadWordButton);
+            this.ToolsGroupBox.Controls.Add(this.ReadByteButton);
+            this.ToolsGroupBox.Controls.Add(this.ReadRegisterComboBox);
+            this.ToolsGroupBox.Controls.Add(this.ReadLabel);
+            this.ToolsGroupBox.Controls.Add(this.RegisterLabelRead);
+            this.ToolsGroupBox.Enabled = false;
+            this.ToolsGroupBox.Location = new System.Drawing.Point(12, 298);
+            this.ToolsGroupBox.Name = "ToolsGroupBox";
+            this.ToolsGroupBox.Size = new System.Drawing.Size(365, 164);
+            this.ToolsGroupBox.TabIndex = 13;
+            this.ToolsGroupBox.TabStop = false;
+            this.ToolsGroupBox.Text = "Tools";
             // 
             // ReadDataTextBox
             // 
@@ -429,7 +651,6 @@
             this.ReadBlockButton.TabIndex = 10;
             this.ReadBlockButton.Text = "block";
             this.ReadBlockButton.UseVisualStyleBackColor = true;
-            this.ReadBlockButton.Click += new System.EventHandler(this.ReadBlockButton_Click);
             // 
             // ReadWordButton
             // 
@@ -439,7 +660,6 @@
             this.ReadWordButton.TabIndex = 9;
             this.ReadWordButton.Text = "word";
             this.ReadWordButton.UseVisualStyleBackColor = true;
-            this.ReadWordButton.Click += new System.EventHandler(this.ReadWordButton_Click);
             // 
             // ReadByteButton
             // 
@@ -449,7 +669,6 @@
             this.ReadByteButton.TabIndex = 5;
             this.ReadByteButton.Text = "byte";
             this.ReadByteButton.UseVisualStyleBackColor = true;
-            this.ReadByteButton.Click += new System.EventHandler(this.ReadByteButton_Click);
             // 
             // ReadRegisterComboBox
             // 
@@ -461,7 +680,6 @@
             this.ReadRegisterComboBox.Name = "ReadRegisterComboBox";
             this.ReadRegisterComboBox.Size = new System.Drawing.Size(38, 23);
             this.ReadRegisterComboBox.TabIndex = 3;
-            this.ReadRegisterComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ReadRegisterComboBox_KeyPress);
             // 
             // ReadLabel
             // 
@@ -472,168 +690,63 @@
             this.ReadLabel.TabIndex = 8;
             this.ReadLabel.Text = "Read:";
             // 
-            // RegisterLabelRead
-            // 
-            this.RegisterLabelRead.AutoSize = true;
-            this.RegisterLabelRead.Location = new System.Drawing.Point(7, 55);
-            this.RegisterLabelRead.Name = "RegisterLabelRead";
-            this.RegisterLabelRead.Size = new System.Drawing.Size(49, 13);
-            this.RegisterLabelRead.TabIndex = 1;
-            this.RegisterLabelRead.Text = "Register:";
-            // 
-            // MenuStrip
-            // 
-            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutToolStripMenuItem});
-            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.MenuStrip.Name = "MenuStrip";
-            this.MenuStrip.Size = new System.Drawing.Size(1111, 24);
-            this.MenuStrip.TabIndex = 7;
-            this.MenuStrip.Text = "menuStrip1";
-            // 
-            // AboutToolStripMenuItem
-            // 
-            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.AboutToolStripMenuItem.Text = "About";
-            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
-            // 
-            // DebugGroupBox
-            // 
-            this.DebugGroupBox.Controls.Add(this.ReadROMDescriptionLabel);
-            this.DebugGroupBox.Controls.Add(this.ReadROMByBytesCheckBox);
-            this.DebugGroupBox.Controls.Add(this.ReadROMButton);
-            this.DebugGroupBox.Location = new System.Drawing.Point(390, 298);
-            this.DebugGroupBox.Name = "DebugGroupBox";
-            this.DebugGroupBox.Size = new System.Drawing.Size(321, 227);
-            this.DebugGroupBox.TabIndex = 8;
-            this.DebugGroupBox.TabStop = false;
-            this.DebugGroupBox.Text = "Debug";
-            // 
-            // ReadROMDescriptionLabel
-            // 
-            this.ReadROMDescriptionLabel.AutoSize = true;
-            this.ReadROMDescriptionLabel.Location = new System.Drawing.Point(6, 46);
-            this.ReadROMDescriptionLabel.Name = "ReadROMDescriptionLabel";
-            this.ReadROMDescriptionLabel.Size = new System.Drawing.Size(307, 13);
-            this.ReadROMDescriptionLabel.TabIndex = 2;
-            this.ReadROMDescriptionLabel.Text = "Read interval: 0x0000-0x07FF, 0x4000-0x47FF, 0x8000-0x87FF";
-            // 
-            // ReadROMByBytesCheckBox
-            // 
-            this.ReadROMByBytesCheckBox.AutoSize = true;
-            this.ReadROMByBytesCheckBox.Location = new System.Drawing.Point(89, 24);
-            this.ReadROMByBytesCheckBox.Name = "ReadROMByBytesCheckBox";
-            this.ReadROMByBytesCheckBox.Size = new System.Drawing.Size(195, 17);
-            this.ReadROMByBytesCheckBox.TabIndex = 1;
-            this.ReadROMByBytesCheckBox.Text = "Read ROM by bytes (default: block)";
-            this.ReadROMByBytesCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // ReadROMButton
-            // 
-            this.ReadROMButton.Location = new System.Drawing.Point(8, 20);
-            this.ReadROMButton.Name = "ReadROMButton";
-            this.ReadROMButton.Size = new System.Drawing.Size(75, 23);
-            this.ReadROMButton.TabIndex = 0;
-            this.ReadROMButton.Text = "Read ROM";
-            this.ReadROMButton.UseVisualStyleBackColor = true;
-            this.ReadROMButton.Click += new System.EventHandler(this.ReadROMButton_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 543);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1111, 22);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
-            this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.ChipNameText);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(721, 25);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 314);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Battery Data";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Chip";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // ChipNameText
-            // 
-            this.ChipNameText.Location = new System.Drawing.Point(98, 16);
-            this.ChipNameText.Name = "ChipNameText";
-            this.ChipNameText.Size = new System.Drawing.Size(131, 20);
-            this.ChipNameText.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(117, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Read Battery Data";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 565);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.DebugGroupBox);
-            this.Controls.Add(this.ToolsGroupBox);
-            this.Controls.Add(this.ControlGroupBox);
-            this.Controls.Add(this.CommunicationGroupBox);
-            this.Controls.Add(this.MenuStrip);
+            this.ClientSize = new System.Drawing.Size(969, 808);
+            this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.MenuStrip;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SB Hack - Evolved";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.DebugGroupBox.ResumeLayout(false);
+            this.DebugGroupBox.PerformLayout();
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ControlGroupBox.ResumeLayout(false);
             this.CommunicationGroupBox.ResumeLayout(false);
             this.CommunicationGroupBox.PerformLayout();
             this.ToolsGroupBox.ResumeLayout(false);
             this.ToolsGroupBox.PerformLayout();
-            this.MenuStrip.ResumeLayout(false);
-            this.MenuStrip.PerformLayout();
-            this.DebugGroupBox.ResumeLayout(false);
-            this.DebugGroupBox.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox DebugGroupBox;
+        private System.Windows.Forms.Label ReadROMDescriptionLabel;
+        private System.Windows.Forms.CheckBox ReadROMByBytesCheckBox;
+        private System.Windows.Forms.Button ReadROMButton;
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ReadBatteryDataButton;
+        private System.Windows.Forms.TextBox ChipNameText;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox ControlGroupBox;
         private System.Windows.Forms.Button StatusButton;
         private System.Windows.Forms.Button ResetButton;
@@ -645,13 +758,16 @@
         private System.Windows.Forms.ComboBox SendComboBox;
         private System.Windows.Forms.TextBox CommunicationTextBox;
         private System.Windows.Forms.GroupBox ToolsGroupBox;
-        private System.Windows.Forms.Label RegisterLabelRead;
-        private System.Windows.Forms.Label ReadLabel;
-        private System.Windows.Forms.ComboBox ReadRegisterComboBox;
-        private System.Windows.Forms.Button ReadWordButton;
-        private System.Windows.Forms.Button ReadByteButton;
-        private System.Windows.Forms.Button ReadBlockButton;
-        private System.Windows.Forms.TextBox ReadDataTextBox;
+        private System.Windows.Forms.Button WordByteOrderOKButton;
+        private System.Windows.Forms.Label WordByteOrderLabel;
+        private System.Windows.Forms.ComboBox WordByteOrderComboBox;
+        private System.Windows.Forms.Button SMBusAddressSelectButton;
+        private System.Windows.Forms.ComboBox SMBusAddressComboBox;
+        private System.Windows.Forms.Label DashLabel;
+        private System.Windows.Forms.TextBox RegEndTextBox;
+        private System.Windows.Forms.TextBox RegStartTextBox;
+        private System.Windows.Forms.Button SMBusRegisterDumpButton;
+        private System.Windows.Forms.Button ScanSMBusButton;
         private System.Windows.Forms.TextBox WriteDataTextBox;
         private System.Windows.Forms.Button WriteBlockButton;
         private System.Windows.Forms.Button WriteWordButton;
@@ -659,28 +775,14 @@
         private System.Windows.Forms.ComboBox WriteRegisterComboBox;
         private System.Windows.Forms.Label WriteLabel;
         private System.Windows.Forms.Label RegisterLabelWrite;
-        private System.Windows.Forms.Button ScanSMBusButton;
-        private System.Windows.Forms.Button SMBusRegisterDumpButton;
-        private System.Windows.Forms.TextBox RegStartTextBox;
-        private System.Windows.Forms.TextBox RegEndTextBox;
-        private System.Windows.Forms.Label DashLabel;
-        private System.Windows.Forms.MenuStrip MenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
-        private System.Windows.Forms.ComboBox SMBusAddressComboBox;
-        private System.Windows.Forms.Button SMBusAddressSelectButton;
-        private System.Windows.Forms.ComboBox WordByteOrderComboBox;
-        private System.Windows.Forms.Label WordByteOrderLabel;
-        private System.Windows.Forms.Button WordByteOrderOKButton;
-        private System.Windows.Forms.GroupBox DebugGroupBox;
-        private System.Windows.Forms.Button ReadROMButton;
-        private System.Windows.Forms.CheckBox ReadROMByBytesCheckBox;
-        private System.Windows.Forms.Label ReadROMDescriptionLabel;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox ChipNameText;
+        private System.Windows.Forms.TextBox ReadDataTextBox;
+        private System.Windows.Forms.Button ReadBlockButton;
+        private System.Windows.Forms.Button ReadWordButton;
+        private System.Windows.Forms.Button ReadByteButton;
+        private System.Windows.Forms.ComboBox ReadRegisterComboBox;
+        private System.Windows.Forms.Label ReadLabel;
+        private System.Windows.Forms.Label RegisterLabelRead;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
