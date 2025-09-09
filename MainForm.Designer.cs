@@ -36,7 +36,6 @@
             this.ReadROMByBytesCheckBox = new System.Windows.Forms.CheckBox();
             this.ReadROMButton = new System.Windows.Forms.Button();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
-            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.WordByteOrderOKButton = new System.Windows.Forms.Button();
@@ -47,7 +46,7 @@
             this.DashLabel = new System.Windows.Forms.Label();
             this.RegEndTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.BattDesCapaText = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.RegStartTextBox = new System.Windows.Forms.TextBox();
             this.SMBusRegisterDumpButton = new System.Windows.Forms.Button();
@@ -55,15 +54,15 @@
             this.WriteDataTextBox = new System.Windows.Forms.TextBox();
             this.WriteBlockButton = new System.Windows.Forms.Button();
             this.WriteWordButton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.BattVoltageText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.WriteByteButton = new System.Windows.Forms.Button();
             this.WriteRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.WriteLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.BattSerialNoText = new System.Windows.Forms.TextBox();
+            this.ChipManufText = new System.Windows.Forms.TextBox();
             this.ReadBatteryDataButton = new System.Windows.Forms.Button();
             this.ChipNameText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,10 +73,6 @@
             this.RefreshButton = new System.Windows.Forms.Button();
             this.COMPortsComboBox = new System.Windows.Forms.ComboBox();
             this.ConnectButton = new System.Windows.Forms.Button();
-            this.CommunicationGroupBox = new System.Windows.Forms.GroupBox();
-            this.SendButton = new System.Windows.Forms.Button();
-            this.SendComboBox = new System.Windows.Forms.ComboBox();
-            this.CommunicationTextBox = new System.Windows.Forms.TextBox();
             this.RegisterLabelRead = new System.Windows.Forms.Label();
             this.ToolsGroupBox = new System.Windows.Forms.GroupBox();
             this.ReadDataTextBox = new System.Windows.Forms.TextBox();
@@ -86,52 +81,63 @@
             this.ReadByteButton = new System.Windows.Forms.Button();
             this.ReadRegisterComboBox = new System.Windows.Forms.ComboBox();
             this.ReadLabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CommunicationGroupBox = new System.Windows.Forms.GroupBox();
+            this.CommunicationTextBox = new System.Windows.Forms.TextBox();
+            this.SendButton = new System.Windows.Forms.Button();
+            this.SendComboBox = new System.Windows.Forms.ComboBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileMenuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.DebugGroupBox.SuspendLayout();
-            this.MenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.ControlGroupBox.SuspendLayout();
-            this.CommunicationGroupBox.SuspendLayout();
             this.ToolsGroupBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.CommunicationGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-3, 60);
+            this.tabControl1.Location = new System.Drawing.Point(-3, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(975, 751);
+            this.tabControl1.Size = new System.Drawing.Size(975, 784);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.SendButton);
+            this.tabPage1.Controls.Add(this.SendComboBox);
             this.tabPage1.Controls.Add(this.DebugGroupBox);
             this.tabPage1.Controls.Add(this.MenuStrip);
             this.tabPage1.Controls.Add(this.statusStrip1);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.ControlGroupBox);
-            this.tabPage1.Controls.Add(this.CommunicationGroupBox);
             this.tabPage1.Controls.Add(this.ToolsGroupBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(967, 725);
+            this.tabPage1.Size = new System.Drawing.Size(967, 758);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Battery Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.CommunicationGroupBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.Size = new System.Drawing.Size(967, 758);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Logs";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // DebugGroupBox
@@ -176,25 +182,17 @@
             // 
             // MenuStrip
             // 
-            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AboutToolStripMenuItem});
             this.MenuStrip.Location = new System.Drawing.Point(3, 3);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Size = new System.Drawing.Size(961, 24);
             this.MenuStrip.TabIndex = 14;
             this.MenuStrip.Text = "menuStrip1";
             // 
-            // AboutToolStripMenuItem
-            // 
-            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.AboutToolStripMenuItem.Text = "About";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 700);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 733);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(961, 22);
             this.statusStrip1.TabIndex = 16;
@@ -285,25 +283,25 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(8, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Chip";
+            this.label5.Text = "Battery Serial No.";
             // 
-            // textBox3
+            // BattDesCapaText
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 94);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(131, 20);
-            this.textBox3.TabIndex = 8;
+            this.BattDesCapaText.Location = new System.Drawing.Point(98, 94);
+            this.BattDesCapaText.Name = "BattDesCapaText";
+            this.BattDesCapaText.Size = new System.Drawing.Size(131, 20);
+            this.BattDesCapaText.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Chip";
+            this.label4.Text = "Design Capacity";
             // 
             // RegStartTextBox
             // 
@@ -362,30 +360,30 @@
             this.WriteWordButton.Text = "word";
             this.WriteWordButton.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // BattVoltageText
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(131, 20);
-            this.textBox2.TabIndex = 6;
+            this.BattVoltageText.Location = new System.Drawing.Point(98, 68);
+            this.BattVoltageText.Name = "BattVoltageText";
+            this.BattVoltageText.Size = new System.Drawing.Size(131, 20);
+            this.BattVoltageText.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Chip";
+            this.label3.Text = "Battery Voltage";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Chip";
+            this.label2.Text = "Name";
             // 
             // WriteByteButton
             // 
@@ -418,13 +416,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.BattSerialNoText);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.BattDesCapaText);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.BattVoltageText);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.ChipManufText);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.ReadBatteryDataButton);
             this.groupBox1.Controls.Add(this.ChipNameText);
@@ -436,19 +434,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Battery Data";
             // 
-            // textBox4
+            // BattSerialNoText
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 120);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(131, 20);
-            this.textBox4.TabIndex = 10;
+            this.BattSerialNoText.Location = new System.Drawing.Point(98, 120);
+            this.BattSerialNoText.Name = "BattSerialNoText";
+            this.BattSerialNoText.Size = new System.Drawing.Size(131, 20);
+            this.BattSerialNoText.TabIndex = 10;
             // 
-            // textBox1
+            // ChipManufText
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 4;
+            this.ChipManufText.Location = new System.Drawing.Point(98, 42);
+            this.ChipManufText.Name = "ChipManufText";
+            this.ChipManufText.Size = new System.Drawing.Size(131, 20);
+            this.ChipManufText.TabIndex = 4;
             // 
             // ReadBatteryDataButton
             // 
@@ -546,48 +544,6 @@
             this.ConnectButton.TabIndex = 0;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
-            // 
-            // CommunicationGroupBox
-            // 
-            this.CommunicationGroupBox.Controls.Add(this.SendButton);
-            this.CommunicationGroupBox.Controls.Add(this.SendComboBox);
-            this.CommunicationGroupBox.Controls.Add(this.CommunicationTextBox);
-            this.CommunicationGroupBox.Location = new System.Drawing.Point(11, 27);
-            this.CommunicationGroupBox.Name = "CommunicationGroupBox";
-            this.CommunicationGroupBox.Size = new System.Drawing.Size(700, 265);
-            this.CommunicationGroupBox.TabIndex = 11;
-            this.CommunicationGroupBox.TabStop = false;
-            this.CommunicationGroupBox.Text = "Communication";
-            // 
-            // SendButton
-            // 
-            this.SendButton.Location = new System.Drawing.Point(647, 237);
-            this.SendButton.Name = "SendButton";
-            this.SendButton.Size = new System.Drawing.Size(51, 25);
-            this.SendButton.TabIndex = 2;
-            this.SendButton.Text = "Send";
-            this.SendButton.UseVisualStyleBackColor = true;
-            // 
-            // SendComboBox
-            // 
-            this.SendComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SendComboBox.FormattingEnabled = true;
-            this.SendComboBox.Location = new System.Drawing.Point(3, 238);
-            this.SendComboBox.Name = "SendComboBox";
-            this.SendComboBox.Size = new System.Drawing.Size(643, 23);
-            this.SendComboBox.TabIndex = 1;
-            // 
-            // CommunicationTextBox
-            // 
-            this.CommunicationTextBox.BackColor = System.Drawing.SystemColors.Window;
-            this.CommunicationTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CommunicationTextBox.Location = new System.Drawing.Point(3, 16);
-            this.CommunicationTextBox.Multiline = true;
-            this.CommunicationTextBox.Name = "CommunicationTextBox";
-            this.CommunicationTextBox.ReadOnly = true;
-            this.CommunicationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CommunicationTextBox.Size = new System.Drawing.Size(694, 220);
-            this.CommunicationTextBox.TabIndex = 0;
             // 
             // RegisterLabelRead
             // 
@@ -690,12 +646,86 @@
             this.ReadLabel.TabIndex = 8;
             this.ReadLabel.Text = "Read:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.aboutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(969, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // CommunicationGroupBox
+            // 
+            this.CommunicationGroupBox.Controls.Add(this.CommunicationTextBox);
+            this.CommunicationGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.CommunicationGroupBox.Name = "CommunicationGroupBox";
+            this.CommunicationGroupBox.Size = new System.Drawing.Size(700, 240);
+            this.CommunicationGroupBox.TabIndex = 12;
+            this.CommunicationGroupBox.TabStop = false;
+            this.CommunicationGroupBox.Text = "SMBus Communication Logs";
+            // 
+            // CommunicationTextBox
+            // 
+            this.CommunicationTextBox.BackColor = System.Drawing.SystemColors.Window;
+            this.CommunicationTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CommunicationTextBox.Location = new System.Drawing.Point(3, 16);
+            this.CommunicationTextBox.Multiline = true;
+            this.CommunicationTextBox.Name = "CommunicationTextBox";
+            this.CommunicationTextBox.ReadOnly = true;
+            this.CommunicationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.CommunicationTextBox.Size = new System.Drawing.Size(958, 286);
+            this.CommunicationTextBox.TabIndex = 0;
+            // 
+            // SendButton
+            // 
+            this.SendButton.Location = new System.Drawing.Point(656, 258);
+            this.SendButton.Name = "SendButton";
+            this.SendButton.Size = new System.Drawing.Size(51, 25);
+            this.SendButton.TabIndex = 19;
+            this.SendButton.Text = "Send";
+            this.SendButton.UseVisualStyleBackColor = true;
+            // 
+            // SendComboBox
+            // 
+            this.SendComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SendComboBox.FormattingEnabled = true;
+            this.SendComboBox.Location = new System.Drawing.Point(12, 259);
+            this.SendComboBox.Name = "SendComboBox";
+            this.SendComboBox.Size = new System.Drawing.Size(643, 23);
+            this.SendComboBox.TabIndex = 18;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileMenuExit});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // FileMenuExit
+            // 
+            this.FileMenuExit.Name = "FileMenuExit";
+            this.FileMenuExit.Size = new System.Drawing.Size(180, 22);
+            this.FileMenuExit.Text = "Exit";
+            this.FileMenuExit.Click += new System.EventHandler(this.FileMenuExit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 808);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainForm";
@@ -706,20 +736,22 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.DebugGroupBox.ResumeLayout(false);
             this.DebugGroupBox.PerformLayout();
-            this.MenuStrip.ResumeLayout(false);
-            this.MenuStrip.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ControlGroupBox.ResumeLayout(false);
-            this.CommunicationGroupBox.ResumeLayout(false);
-            this.CommunicationGroupBox.PerformLayout();
             this.ToolsGroupBox.ResumeLayout(false);
             this.ToolsGroupBox.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.CommunicationGroupBox.ResumeLayout(false);
+            this.CommunicationGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -732,17 +764,16 @@
         private System.Windows.Forms.CheckBox ReadROMByBytesCheckBox;
         private System.Windows.Forms.Button ReadROMButton;
         private System.Windows.Forms.MenuStrip MenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox BattSerialNoText;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox BattDesCapaText;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox BattVoltageText;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ChipManufText;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button ReadBatteryDataButton;
         private System.Windows.Forms.TextBox ChipNameText;
@@ -753,10 +784,6 @@
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.ComboBox COMPortsComboBox;
         private System.Windows.Forms.Button ConnectButton;
-        private System.Windows.Forms.GroupBox CommunicationGroupBox;
-        private System.Windows.Forms.Button SendButton;
-        private System.Windows.Forms.ComboBox SendComboBox;
-        private System.Windows.Forms.TextBox CommunicationTextBox;
         private System.Windows.Forms.GroupBox ToolsGroupBox;
         private System.Windows.Forms.Button WordByteOrderOKButton;
         private System.Windows.Forms.Label WordByteOrderLabel;
@@ -783,6 +810,14 @@
         private System.Windows.Forms.Label ReadLabel;
         private System.Windows.Forms.Label RegisterLabelRead;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.Button SendButton;
+        private System.Windows.Forms.ComboBox SendComboBox;
+        private System.Windows.Forms.GroupBox CommunicationGroupBox;
+        private System.Windows.Forms.TextBox CommunicationTextBox;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem FileMenuExit;
     }
 }
 

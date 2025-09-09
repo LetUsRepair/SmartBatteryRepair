@@ -32,6 +32,7 @@
             this.AboutDescriptionLabel = new System.Windows.Forms.Label();
             this.AboutTitleLabel = new System.Windows.Forms.Label();
             this.AboutPictureBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AboutPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,9 +41,9 @@
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.Location = new System.Drawing.Point(311, 13);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(52, 13);
+            this.VersionLabel.Size = new System.Drawing.Size(49, 13);
             this.VersionLabel.TabIndex = 6;
-            this.VersionLabel.Text = "GUI: N/A";
+            this.VersionLabel.Text = "Ver: N/A";
             // 
             // AboutDescriptionLabel
             // 
@@ -59,9 +60,9 @@
             this.AboutTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AboutTitleLabel.Location = new System.Drawing.Point(139, 8);
             this.AboutTitleLabel.Name = "AboutTitleLabel";
-            this.AboutTitleLabel.Size = new System.Drawing.Size(166, 20);
+            this.AboutTitleLabel.Size = new System.Drawing.Size(157, 20);
             this.AboutTitleLabel.TabIndex = 4;
-            this.AboutTitleLabel.Text = "Smart Battery Hack";
+            this.AboutTitleLabel.Text = "SB Hack - Evolved";
             // 
             // AboutPictureBox
             // 
@@ -72,11 +73,23 @@
             this.AboutPictureBox.TabIndex = 7;
             this.AboutPictureBox.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(143, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 65);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Original software from GitHub:\r\nhttps://github.com/laszlodaniel/SmartBatteryHack\r" +
+    "\n\r\nFurther Developed into current use:\r\nhttps://github.com/letusrepair/SB-Hack-E" +
+    "volved";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 141);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.AboutPictureBox);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.AboutDescriptionLabel);
@@ -99,5 +112,6 @@
         private System.Windows.Forms.Label AboutDescriptionLabel;
         private System.Windows.Forms.Label AboutTitleLabel;
         private System.Windows.Forms.PictureBox AboutPictureBox;
+        private System.Windows.Forms.Label label1;
     }
 }

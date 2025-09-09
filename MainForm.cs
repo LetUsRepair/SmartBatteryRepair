@@ -43,7 +43,7 @@ namespace SmartBatteryHack
         private void MainForm_Load(object sender, EventArgs e)
         {
             GUIVersion = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
-            Text += "  |  GUI " + GUIVersion;
+            Text += "  |  Ver. " + GUIVersion;
             toolStripStatusLabel1.Text = "Not currently connected to any device!";
 
             // Create LOG directory if it doesn't exist
@@ -1221,5 +1221,18 @@ namespace SmartBatteryHack
             }
         }
 
+        private void FileMenuExit_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
+        }
     }
 }

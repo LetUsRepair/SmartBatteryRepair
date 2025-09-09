@@ -14,7 +14,7 @@ namespace SmartBatteryHack
             originalForm = incomingForm;
             InitializeComponent();
             Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-            VersionLabel.Text = "GUI v" + Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
+            VersionLabel.Text = "Ver. " + Assembly.GetExecutingAssembly().GetName().Version.ToString(3);
         }
 
         private void AboutForm_FormClosed(object sender, FormClosedEventArgs e)
