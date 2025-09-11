@@ -111,7 +111,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-3, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(975, 784);
+            this.tabControl1.Size = new System.Drawing.Size(975, 769);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -127,7 +127,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(967, 746);
+            this.tabPage1.Size = new System.Drawing.Size(967, 731);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Battery Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -140,6 +140,7 @@
             this.SendButton.TabIndex = 19;
             this.SendButton.Text = "Send";
             this.SendButton.UseVisualStyleBackColor = true;
+            this.SendButton.Click += new System.EventHandler(this.SendButton_Click);
             // 
             // SendComboBox
             // 
@@ -189,6 +190,7 @@
             this.ReadROMButton.TabIndex = 0;
             this.ReadROMButton.Text = "Read ROM";
             this.ReadROMButton.UseVisualStyleBackColor = true;
+            this.ReadROMButton.Click += new System.EventHandler(this.ReadROMButton_Click);
             // 
             // MenuStrip
             // 
@@ -202,7 +204,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 721);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 706);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(961, 22);
             this.statusStrip1.TabIndex = 16;
@@ -306,6 +308,7 @@
             this.ReadBatteryDataButton.TabIndex = 2;
             this.ReadBatteryDataButton.Text = "Read Battery Data";
             this.ReadBatteryDataButton.UseVisualStyleBackColor = true;
+            this.ReadBatteryDataButton.Click += new System.EventHandler(this.ReadBatteryDataButton_Click);
             // 
             // ChipNameText
             // 
@@ -346,6 +349,7 @@
             this.StatusButton.TabIndex = 4;
             this.StatusButton.Text = "Status";
             this.StatusButton.UseVisualStyleBackColor = true;
+            this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
             // 
             // ResetButton
             // 
@@ -356,6 +360,7 @@
             this.ResetButton.TabIndex = 3;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // RefreshButton
             // 
@@ -366,6 +371,7 @@
             this.RefreshButton.TabIndex = 2;
             this.RefreshButton.Text = "Refresh";
             this.RefreshButton.UseVisualStyleBackColor = true;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // COMPortsComboBox
             // 
@@ -385,6 +391,7 @@
             this.ConnectButton.TabIndex = 0;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = true;
+            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
             // ToolsGroupBox
             // 
@@ -428,6 +435,7 @@
             this.WordByteOrderOKButton.TabIndex = 5;
             this.WordByteOrderOKButton.Text = "OK";
             this.WordByteOrderOKButton.UseVisualStyleBackColor = true;
+            this.WordByteOrderOKButton.Click += new System.EventHandler(this.WordByteOrderOKButton_Click);
             // 
             // WordByteOrderLabel
             // 
@@ -461,6 +469,7 @@
             this.SMBusAddressSelectButton.TabIndex = 27;
             this.SMBusAddressSelectButton.Text = "Select Address";
             this.SMBusAddressSelectButton.UseVisualStyleBackColor = true;
+            this.SMBusAddressSelectButton.Click += new System.EventHandler(this.SMBusAddressSelectButton_Click);
             // 
             // SMBusAddressComboBox
             // 
@@ -522,6 +531,7 @@
             this.ScanSMBusButton.TabIndex = 5;
             this.ScanSMBusButton.Text = "Scan SMBus";
             this.ScanSMBusButton.UseVisualStyleBackColor = true;
+            this.ScanSMBusButton.Click += new System.EventHandler(this.ScanSMBusButton_Click);
             // 
             // WriteDataTextBox
             // 
@@ -541,6 +551,7 @@
             this.WriteBlockButton.TabIndex = 17;
             this.WriteBlockButton.Text = "block";
             this.WriteBlockButton.UseVisualStyleBackColor = true;
+            this.WriteBlockButton.Click += new System.EventHandler(this.WriteBlockButton_Click);
             // 
             // WriteWordButton
             // 
@@ -550,6 +561,7 @@
             this.WriteWordButton.TabIndex = 16;
             this.WriteWordButton.Text = "word";
             this.WriteWordButton.UseVisualStyleBackColor = true;
+            this.WriteWordButton.Click += new System.EventHandler(this.WriteWordButton_Click);
             // 
             // WriteByteButton
             // 
@@ -559,6 +571,7 @@
             this.WriteByteButton.TabIndex = 14;
             this.WriteByteButton.Text = "byte";
             this.WriteByteButton.UseVisualStyleBackColor = true;
+            this.WriteByteButton.Click += new System.EventHandler(this.WriteByteButton_Click);
             // 
             // WriteRegisterComboBox
             // 
@@ -608,6 +621,7 @@
             this.ReadBlockButton.TabIndex = 10;
             this.ReadBlockButton.Text = "block";
             this.ReadBlockButton.UseVisualStyleBackColor = true;
+            this.ReadBlockButton.Click += new System.EventHandler(this.ReadBlockButton_Click);
             // 
             // ReadWordButton
             // 
@@ -617,6 +631,7 @@
             this.ReadWordButton.TabIndex = 9;
             this.ReadWordButton.Text = "word";
             this.ReadWordButton.UseVisualStyleBackColor = true;
+            this.ReadWordButton.Click += new System.EventHandler(this.ReadWordButton_Click);
             // 
             // ReadByteButton
             // 
@@ -626,6 +641,7 @@
             this.ReadByteButton.TabIndex = 5;
             this.ReadByteButton.Text = "byte";
             this.ReadByteButton.UseVisualStyleBackColor = true;
+            this.ReadByteButton.Click += new System.EventHandler(this.ReadByteButton_Click);
             // 
             // ReadRegisterComboBox
             // 
@@ -659,10 +675,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.CommunicationGroupBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(967, 758);
+            this.tabPage2.Size = new System.Drawing.Size(967, 731);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Logs";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -672,7 +688,7 @@
             this.CommunicationGroupBox.Controls.Add(this.CommunicationTextBox);
             this.CommunicationGroupBox.Location = new System.Drawing.Point(3, 3);
             this.CommunicationGroupBox.Name = "CommunicationGroupBox";
-            this.CommunicationGroupBox.Size = new System.Drawing.Size(700, 240);
+            this.CommunicationGroupBox.Size = new System.Drawing.Size(964, 722);
             this.CommunicationGroupBox.TabIndex = 12;
             this.CommunicationGroupBox.TabStop = false;
             this.CommunicationGroupBox.Text = "SMBus Communication Logs";
@@ -681,12 +697,12 @@
             // 
             this.CommunicationTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.CommunicationTextBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.CommunicationTextBox.Location = new System.Drawing.Point(3, 16);
+            this.CommunicationTextBox.Location = new System.Drawing.Point(10, 19);
             this.CommunicationTextBox.Multiline = true;
             this.CommunicationTextBox.Name = "CommunicationTextBox";
             this.CommunicationTextBox.ReadOnly = true;
             this.CommunicationTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.CommunicationTextBox.Size = new System.Drawing.Size(958, 286);
+            this.CommunicationTextBox.Size = new System.Drawing.Size(954, 697);
             this.CommunicationTextBox.TabIndex = 0;
             // 
             // menuStrip1
@@ -724,9 +740,9 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(967, 758);
+            this.tabPage3.Size = new System.Drawing.Size(967, 828);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Registers";
             this.tabPage3.UseVisualStyleBackColor = true;
