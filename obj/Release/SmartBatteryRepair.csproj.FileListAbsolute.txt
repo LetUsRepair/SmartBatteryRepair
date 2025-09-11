@@ -1,0 +1,11 @@
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\bin\Release\SmartBatteryRepair.exe.config
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\bin\Release\SmartBatteryRepair.exe
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\bin\Release\SmartBatteryRepair.pdb
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.csproj.AssemblyReference.cache
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.AboutForm.resources
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.MainForm.resources
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.Properties.Resources.resources
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.csproj.GenerateResource.cache
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.csproj.CoreCompileInputs.cache
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.exe
+D:\#Batteries\SmartBatteryHack\GUI\SmartBatteryRepair\SmartBatteryRepair\obj\Release\SmartBatteryRepair.pdb
