@@ -18,10 +18,10 @@ Simple; We do not support the manufacturers opinion of us *nefariously hacking* 
 
 ## Here I'll show the old layout vs. mine
 
-> OLD:
+> OLD:  
 ![This is the old layout](images/Old-GUI.png)
 
-> My new, tabbed, interface (earliest "sketch"):
+> My new, tabbed, interface (earliest "sketch"):  
 ![The first layout-test of my interface](images/New-tabbed-interface.png)
 
 ___
