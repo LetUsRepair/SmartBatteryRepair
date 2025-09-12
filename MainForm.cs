@@ -675,6 +675,14 @@ namespace SmartBatteryRepair
                                                 Util.UpdateTextField(ChipNameText, data, null);
                                             }
                                             break;
+                                        case 0x07: // read battery serial
+                                            if (Payload.Length > 2)
+                                            {
+                                                string register = Util.ByteToHexString(Payload, 0, 1);
+                                                string data = Encoding.ASCII.GetString(Payload, 2, Payload.Length - 2);
+                                                Util.UpdateTextField(BattSerialNoText, data, null);
+                                            }
+                                            break;
                                         default:
                                             Util.UpdateTextBox(CommunicationTextBox, "[RX->] Data received", Packet);
                                             break;
@@ -1192,12 +1200,13 @@ namespace SmartBatteryRepair
         private void ReadBatteryDataButton_Click(object sender, EventArgs e)
         {
             List<byte> packet = new List<byte>();
-            byte reg = 0;
+            byte[] reg = new byte[2];
             bool error = false;
 
             try
             {
-                reg = 0x21;
+                reg[0] = 0x00;
+                reg[1] = 0x25;
             }
             catch
             {
@@ -1206,7 +1215,8 @@ namespace SmartBatteryRepair
 
             if (!error)
             {
-                packet.AddRange(new byte[] { 0x3D, 0x00, 0x03, 0x04, 0x06, reg });
+                packet.AddRange(new byte[] { 0x3D, 0x00, 0x04, 0x02, 0x03 });
+                packet.AddRange(reg);
 
                 byte checksum = 0;
                 for (int i = 1; i < packet.Count; i++)
@@ -1215,9 +1225,10 @@ namespace SmartBatteryRepair
                 }
                 packet.Add(checksum);
 
-                byte[] ReadBlockData = packet.ToArray();
-                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Read Chip Data", ReadBlockData);
-                Serial.Write(ReadBlockData, 0, ReadBlockData.Length);
+                byte[] SMBusRegisterDumpRequest = packet.ToArray();
+                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] SMBus Battery Data request", SMBusRegisterDumpRequest);
+                Serial.Write(SMBusRegisterDumpRequest, 0, SMBusRegisterDumpRequest.Length);
+                SMBusRegisterDumpList.Clear();
             }
         }
 
