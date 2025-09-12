@@ -542,6 +542,168 @@ namespace SmartBatteryRepair
                                                 Util.UpdateTextBox(CommunicationTextBox, "[INFO] SMBus register dump details (" + Util.ByteToHexString(Payload, 0, 1) + "-" + Util.ByteToHexString(Payload, 1, 2) + "):" + Environment.NewLine + value.ToString(), null);
                                             }
                                             break;
+                                        case 0x04:
+                                            Util.UpdateTextBox(CommunicationTextBox, "[RX->] Battery Data Received (" + Util.ByteToHexString(Payload, 0, 1) + "-" + Util.ByteToHexString(Payload, 1, 2) + ")", Packet);
+                                            if (Payload.Length > 2)
+                                            {
+                                                SMBusRegisterDumpList.Clear();
+
+                                                for (int i = 1; i < (Payload.Length - 2); i++)
+                                                {
+                                                    i += 2;
+                                                    SMBusRegisterDumpList.Add((ushort)((Payload[i] << 8) + Payload[i + 1]));
+                                                }
+
+                                                byte[] data = new byte[2];
+                                                StringBuilder value = new StringBuilder();
+                                                byte start_reg = Payload[0];
+                                                byte current_reg = 0;
+
+                                                for (int i = 0; i < SMBusRegisterDumpList.Count; i++)
+                                                {
+                                                    data[0] = (byte)(SMBusRegisterDumpList[i] >> 8 & 0xFF);
+                                                    data[1] = (byte)(SMBusRegisterDumpList[i] & 0xFF);
+                                                    current_reg = (byte)(i + start_reg);
+                                                    value.Append("[" + Util.ByteToHexString(new byte[] { current_reg }, 0, 1) + "]: " + Util.ByteToHexString(data, 0, data.Length) + " // ");
+
+                                                    switch (current_reg)
+                                                    {
+                                                        case 0x00:
+                                                            value.Append("ManufacturerAccess: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            break;
+                                                        case 0x01:
+                                                            //if (DesignVoltage > 0) value.Append("RemainingCapacityAlarm: " + SMBusRegisterDumpList[i].ToString() + " mAh = " + Math.Round((DesignVoltage / 1000D) * SMBusRegisterDumpList[i]).ToString("0") + " mWh");
+                                                            //else value.Append("RemainingCapacityAlarm: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            Util.UpdateTextField(RemCapAlarmText, SMBusRegisterDumpList[i].ToString(), null);
+                                                            break;
+                                                        case 0x02:
+                                                            //value.Append("RemainingTimeAlarm: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            Util.UpdateTextField(RemTimeAlarmText, SMBusRegisterDumpList[i].ToString(), null);
+                                                            break;
+                                                        case 0x03:
+                                                            //value.Append("BatteryMode: " + Convert.ToString(SMBusRegisterDumpList[i], 2).PadLeft(16, '0'));
+                                                            Util.UpdateTextField(BatteryModeText, Convert.ToString(SMBusRegisterDumpList[i], 2).PadLeft(16, '0'), null);
+                                                            break;
+                                                        case 0x04:
+                                                            value.Append("AtRate: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x05:
+                                                            value.Append("AtRateTimeToFull: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x06:
+                                                            value.Append("AtRateTimeToEmpty: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x07:
+                                                            string state;
+                                                            if (SMBusRegisterDumpList[i] == 0) state = "false";
+                                                            else state = "true";
+                                                            value.Append("AtRateOK: " + state);
+                                                            break;
+                                                        case 0x08:
+                                                            Double Temperature = Math.Round((SMBusRegisterDumpList[i] - 273.15) / 100, 2);
+                                                            value.Append("Temperature: " + Temperature + "°C");
+                                                            break;
+                                                        case 0x09:
+                                                            Double Voltage = SMBusRegisterDumpList[i] / 1000D;
+                                                            value.Append("Voltage: " + Voltage + " V");
+                                                            break;
+                                                        case 0x0A:
+                                                            Double Current = SMBusRegisterDumpList[i] / 1000D;
+                                                            value.Append("Current: " + Current + " A");
+                                                            break;
+                                                        case 0x0B:
+                                                            Double AverageCurrent = SMBusRegisterDumpList[i] / 1000D;
+                                                            value.Append("AverageCurrent: " + AverageCurrent + " A");
+                                                            break;
+                                                        case 0x0C:
+                                                            value.Append("MaxError: " + SMBusRegisterDumpList[i].ToString() + "%");
+                                                            break;
+                                                        case 0x0D:
+                                                            value.Append("RelativeStateOfCharge: " + SMBusRegisterDumpList[i].ToString() + "%");
+                                                            break;
+                                                        case 0x0E:
+                                                            value.Append("AbsoluteStateOfCharge: " + SMBusRegisterDumpList[i].ToString() + "%");
+                                                            break;
+                                                        case 0x0F:
+                                                            value.Append("RemainingCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            break;
+                                                        case 0x10:
+                                                            value.Append("FullChargeCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            break;
+                                                        case 0x11:
+                                                            value.Append("RunTimeToEmpty: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x12:
+                                                            value.Append("AverageTimeToEmpty: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x13:
+                                                            value.Append("AverageTimeToFull: " + SMBusRegisterDumpList[i].ToString() + " minutes");
+                                                            break;
+                                                        case 0x14:
+                                                            Double ChargingCurrent = SMBusRegisterDumpList[i] / 1000D;
+                                                            value.Append("ChargingCurrent: " + ChargingCurrent + " A");
+                                                            break;
+                                                        case 0x15:
+                                                            Double ChargingVoltage = SMBusRegisterDumpList[i] / 1000D;
+                                                            value.Append("ChargingVoltage: " + ChargingVoltage + " V");
+                                                            break;
+                                                        case 0x16:
+                                                            value.Append("BatteryStatus: " + Convert.ToString(SMBusRegisterDumpList[i], 2).PadLeft(16, '0'));
+                                                            break;
+                                                        case 0x17:
+                                                            //value.Append("CycleCount: " + SMBusRegisterDumpList[i].ToString());
+                                                            Util.UpdateTextField(CycleCountsText, SMBusRegisterDumpList[i].ToString(), null);
+                                                            break;
+                                                        case 0x18:
+                                                            value.Append("DesignCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            break;
+                                                        case 0x19:
+                                                            DesignVoltage = SMBusRegisterDumpList[i];
+                                                            //value.Append("DesignVoltage: " + (DesignVoltage / 1000D).ToString() + " V");
+                                                            Util.UpdateTextField(DesVoltageText, (DesignVoltage / 1000D).ToString(), null);
+                                                            break;
+                                                        case 0x1A:
+                                                            value.Append("SpecificationInfo: " + Convert.ToString(SMBusRegisterDumpList[i], 2).PadLeft(16, '0'));
+                                                            break;
+                                                        case 0x1B:
+                                                            int year = 1980 + ((SMBusRegisterDumpList[i] >> 9) & 0x7F);
+                                                            int month = (SMBusRegisterDumpList[i] >> 5) & 0x0F;
+                                                            int day = SMBusRegisterDumpList[i] & 0x1F;
+                                                            DateTime Date = new DateTime(year, month, day);
+                                                            //value.Append("ManufactureDate: " + Date.ToString("yyyy.MM.dd"));
+                                                            Util.UpdateTextField(ManufDateText, Date.ToString("yyyy.MM.dd"), null);
+                                                            break;
+                                                        case 0x1C:
+                                                            //value.Append("SerialNumber: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            Util.UpdateTextField(BattSerialNoText, Util.ByteToHexString(data, 0, data.Length), null);
+                                                            break;
+                                                        case 0x20:
+                                                            //value.Append("ManufacturerName: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            Util.UpdateTextField(ManufNameText, Util.ByteToHexString(data, 0, data.Length), null);
+                                                            break;
+                                                        case 0x21:
+                                                            //value.Append("DeviceName: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            Util.UpdateTextField(DevNameText, Util.ByteToHexString(data, 0, data.Length), null);
+                                                            break;
+                                                        case 0x22:
+                                                            //value.Append("DeviceChemistry: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            Util.UpdateTextField(DevChemText, Util.ByteToHexString(data, 0, data.Length), null);
+                                                            break;
+                                                        case 0x23:
+                                                            //value.Append("ManufacturerData: " + Util.ByteToHexString(data, 0, data.Length));
+                                                            Util.UpdateTextField(ManufDataText, Util.ByteToHexString(data, 0, data.Length), null);
+                                                            break;
+                                                        default:
+                                                            value.Append(Util.ByteToHexString(data, 0, data.Length));
+                                                            break;
+                                                    }
+
+                                                    if (i != (SMBusRegisterDumpList.Count - 1)) value.Append(Environment.NewLine);
+                                                }
+
+                                                Util.UpdateTextBox(CommunicationTextBox, "[INFO] SMBus register dump details (" + Util.ByteToHexString(Payload, 0, 1) + "-" + Util.ByteToHexString(Payload, 1, 2) + "):" + Environment.NewLine + value.ToString(), null);
+                                            }
+                                            break;
                                         default:
                                             Util.UpdateTextBox(CommunicationTextBox, "[RX->] Data received", Packet);
                                             break;
@@ -672,7 +834,7 @@ namespace SmartBatteryRepair
                                                 //{
                                                 //    ReadDataTextBox.Text = data;
                                                 //});
-                                                Util.UpdateTextField(ChipNameText, data, null);
+                                                Util.UpdateTextField(DevNameText, data, null);
                                             }
                                             break;
                                         case 0x07: // read battery serial
@@ -1215,7 +1377,7 @@ namespace SmartBatteryRepair
 
             if (!error)
             {
-                packet.AddRange(new byte[] { 0x3D, 0x00, 0x04, 0x02, 0x03 });
+                packet.AddRange(new byte[] { 0x3D, 0x00, 0x04, 0x02, 0x04 });
                 packet.AddRange(reg);
 
                 byte checksum = 0;
@@ -1226,7 +1388,7 @@ namespace SmartBatteryRepair
                 packet.Add(checksum);
 
                 byte[] SMBusRegisterDumpRequest = packet.ToArray();
-                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] SMBus Battery Data request", SMBusRegisterDumpRequest);
+                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Battery Data request", SMBusRegisterDumpRequest);
                 Serial.Write(SMBusRegisterDumpRequest, 0, SMBusRegisterDumpRequest.Length);
                 SMBusRegisterDumpList.Clear();
             }
