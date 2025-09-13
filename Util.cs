@@ -151,6 +151,66 @@ namespace SmartBatteryRepair
             }
         }
 
+        public static void UpdateLabel(Label label, string text, string units)
+        {
+            string ret = String.Empty;
+            ret += text + units;
+            
+            if (label.InvokeRequired)
+            {
+                label.BeginInvoke((MethodInvoker)delegate
+                {
+                    label.Text = ret;
+                });
+            }
+            else
+            {
+                label.Text = ret;
+            }
+
+            // Save text to log-file
+            File.AppendAllText(MainForm.USBLogFilename, ret);
+
+        }
+
+        public static void UpdateProgBar(ProgressBar progbar, int value)
+        {
+            if (progbar.InvokeRequired)
+            {
+                progbar.BeginInvoke((MethodInvoker)delegate
+                {
+                    progbar.Value = value;
+                });
+            }
+            else
+            {
+                progbar.Value = value;
+            }
+
+            // Save text to log-file
+            File.AppendAllText(MainForm.USBLogFilename, Convert.ToString(value));
+
+        }
+
+        public static void SetProgBarMax(ProgressBar progbar, int value)
+        {
+            if (progbar.InvokeRequired)
+            {
+                progbar.BeginInvoke((MethodInvoker)delegate
+                {
+                    progbar.Maximum = value;
+                });
+            }
+            else
+            {
+                progbar.Maximum = value;
+            }
+
+            // Save text to log-file
+            File.AppendAllText(MainForm.USBLogFilename, Convert.ToString(value));
+
+        }
+
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch

@@ -30,14 +30,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.Cell4ProgBar = new System.Windows.Forms.ProgressBar();
-            this.label36 = new System.Windows.Forms.Label();
-            this.Cell3ProgBar = new System.Windows.Forms.ProgressBar();
-            this.label29 = new System.Windows.Forms.Label();
-            this.Cell2ProgBar = new System.Windows.Forms.ProgressBar();
-            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ProgBarHealth = new System.Windows.Forms.ProgressBar();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Cell1ProgBar = new System.Windows.Forms.ProgressBar();
+            this.Cell4VLabel = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.Cell3VLabel = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.Cell2VLabel = new System.Windows.Forms.Label();
+            this.Cell2ProgBar = new System.Windows.Forms.ProgressBar();
+            this.Cell1VLabel = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.Cell4ProgBar = new System.Windows.Forms.ProgressBar();
+            this.Cell3ProgBar = new System.Windows.Forms.ProgressBar();
+            this.label36 = new System.Windows.Forms.Label();
             this.ManufDateText = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.SpecInfoText = new System.Windows.Forms.TextBox();
@@ -93,8 +100,11 @@
             this.RemCapAlarmText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.ControlGroupBox = new System.Windows.Forms.GroupBox();
+            this.SMBusAddressSelectButton = new System.Windows.Forms.Button();
             this.StatusButton = new System.Windows.Forms.Button();
+            this.SMBusAddressComboBox = new System.Windows.Forms.ComboBox();
             this.ResetButton = new System.Windows.Forms.Button();
+            this.ScanSMBusButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.COMPortsComboBox = new System.Windows.Forms.ComboBox();
             this.ConnectButton = new System.Windows.Forms.Button();
@@ -150,11 +160,15 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FileMenuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SMBusAddressSelectButton = new System.Windows.Forms.Button();
-            this.SMBusAddressComboBox = new System.Windows.Forms.ComboBox();
-            this.ScanSMBusButton = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.ProgBarCap = new System.Windows.Forms.ProgressBar();
+            this.BattHealthLabel = new System.Windows.Forms.Label();
+            this.RemCapLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.ControlGroupBox.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -182,14 +196,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.Cell4ProgBar);
-            this.tabPage1.Controls.Add(this.label36);
-            this.tabPage1.Controls.Add(this.Cell3ProgBar);
-            this.tabPage1.Controls.Add(this.label29);
-            this.tabPage1.Controls.Add(this.Cell2ProgBar);
-            this.tabPage1.Controls.Add(this.label28);
-            this.tabPage1.Controls.Add(this.Cell1ProgBar);
-            this.tabPage1.Controls.Add(this.label27);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.ManufDateText);
             this.tabPage1.Controls.Add(this.label30);
             this.tabPage1.Controls.Add(this.SpecInfoText);
@@ -256,85 +264,170 @@
             this.tabPage1.Text = "Battery Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // Cell4ProgBar
+            // groupBox3
             // 
-            this.Cell4ProgBar.Location = new System.Drawing.Point(319, 310);
-            this.Cell4ProgBar.Name = "Cell4ProgBar";
-            this.Cell4ProgBar.Size = new System.Drawing.Size(100, 23);
-            this.Cell4ProgBar.TabIndex = 85;
+            this.groupBox3.Controls.Add(this.RemCapLabel);
+            this.groupBox3.Controls.Add(this.BattHealthLabel);
+            this.groupBox3.Controls.Add(this.label38);
+            this.groupBox3.Controls.Add(this.ProgBarCap);
+            this.groupBox3.Controls.Add(this.label37);
+            this.groupBox3.Controls.Add(this.ProgBarHealth);
+            this.groupBox3.Location = new System.Drawing.Point(721, 431);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(238, 209);
+            this.groupBox3.TabIndex = 91;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Battery Health Status";
             // 
-            // label36
+            // ProgBarHealth
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(268, 310);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(45, 18);
-            this.label36.TabIndex = 84;
-            this.label36.Text = "Cell 4";
+            this.ProgBarHealth.Location = new System.Drawing.Point(11, 48);
+            this.ProgBarHealth.Name = "ProgBarHealth";
+            this.ProgBarHealth.Size = new System.Drawing.Size(218, 20);
+            this.ProgBarHealth.Step = 1;
+            this.ProgBarHealth.TabIndex = 0;
             // 
-            // Cell3ProgBar
+            // groupBox2
             // 
-            this.Cell3ProgBar.Location = new System.Drawing.Point(319, 281);
-            this.Cell3ProgBar.Name = "Cell3ProgBar";
-            this.Cell3ProgBar.Size = new System.Drawing.Size(100, 23);
-            this.Cell3ProgBar.TabIndex = 83;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(268, 281);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(45, 18);
-            this.label29.TabIndex = 82;
-            this.label29.Text = "Cell 3";
-            // 
-            // Cell2ProgBar
-            // 
-            this.Cell2ProgBar.Location = new System.Drawing.Point(319, 252);
-            this.Cell2ProgBar.Name = "Cell2ProgBar";
-            this.Cell2ProgBar.Size = new System.Drawing.Size(100, 23);
-            this.Cell2ProgBar.TabIndex = 81;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(268, 252);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(45, 18);
-            this.label28.TabIndex = 80;
-            this.label28.Text = "Cell 2";
+            this.groupBox2.Controls.Add(this.Cell1ProgBar);
+            this.groupBox2.Controls.Add(this.Cell4VLabel);
+            this.groupBox2.Controls.Add(this.label27);
+            this.groupBox2.Controls.Add(this.Cell3VLabel);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.Cell2VLabel);
+            this.groupBox2.Controls.Add(this.Cell2ProgBar);
+            this.groupBox2.Controls.Add(this.Cell1VLabel);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Controls.Add(this.Cell4ProgBar);
+            this.groupBox2.Controls.Add(this.Cell3ProgBar);
+            this.groupBox2.Controls.Add(this.label36);
+            this.groupBox2.Location = new System.Drawing.Point(721, 259);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(238, 160);
+            this.groupBox2.TabIndex = 90;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Battery Cell Status";
             // 
             // Cell1ProgBar
             // 
-            this.Cell1ProgBar.Location = new System.Drawing.Point(319, 223);
+            this.Cell1ProgBar.Location = new System.Drawing.Point(62, 26);
+            this.Cell1ProgBar.Maximum = 4300;
             this.Cell1ProgBar.Name = "Cell1ProgBar";
             this.Cell1ProgBar.Size = new System.Drawing.Size(100, 23);
             this.Cell1ProgBar.TabIndex = 79;
+            // 
+            // Cell4VLabel
+            // 
+            this.Cell4VLabel.AutoSize = true;
+            this.Cell4VLabel.Location = new System.Drawing.Point(170, 117);
+            this.Cell4VLabel.Name = "Cell4VLabel";
+            this.Cell4VLabel.Size = new System.Drawing.Size(22, 13);
+            this.Cell4VLabel.TabIndex = 89;
+            this.Cell4VLabel.Text = "mV";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(268, 223);
+            this.label27.Location = new System.Drawing.Point(11, 26);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(45, 18);
             this.label27.TabIndex = 75;
             this.label27.Text = "Cell 1";
             // 
+            // Cell3VLabel
+            // 
+            this.Cell3VLabel.AutoSize = true;
+            this.Cell3VLabel.Location = new System.Drawing.Point(170, 88);
+            this.Cell3VLabel.Name = "Cell3VLabel";
+            this.Cell3VLabel.Size = new System.Drawing.Size(22, 13);
+            this.Cell3VLabel.TabIndex = 88;
+            this.Cell3VLabel.Text = "mV";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(11, 55);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(45, 18);
+            this.label28.TabIndex = 80;
+            this.label28.Text = "Cell 2";
+            // 
+            // Cell2VLabel
+            // 
+            this.Cell2VLabel.AutoSize = true;
+            this.Cell2VLabel.Location = new System.Drawing.Point(169, 60);
+            this.Cell2VLabel.Name = "Cell2VLabel";
+            this.Cell2VLabel.Size = new System.Drawing.Size(22, 13);
+            this.Cell2VLabel.TabIndex = 87;
+            this.Cell2VLabel.Text = "mV";
+            // 
+            // Cell2ProgBar
+            // 
+            this.Cell2ProgBar.Location = new System.Drawing.Point(62, 55);
+            this.Cell2ProgBar.Maximum = 4300;
+            this.Cell2ProgBar.Name = "Cell2ProgBar";
+            this.Cell2ProgBar.Size = new System.Drawing.Size(100, 23);
+            this.Cell2ProgBar.TabIndex = 81;
+            // 
+            // Cell1VLabel
+            // 
+            this.Cell1VLabel.AutoSize = true;
+            this.Cell1VLabel.Location = new System.Drawing.Point(170, 31);
+            this.Cell1VLabel.Name = "Cell1VLabel";
+            this.Cell1VLabel.Size = new System.Drawing.Size(22, 13);
+            this.Cell1VLabel.TabIndex = 86;
+            this.Cell1VLabel.Text = "mV";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(11, 84);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(45, 18);
+            this.label29.TabIndex = 82;
+            this.label29.Text = "Cell 3";
+            // 
+            // Cell4ProgBar
+            // 
+            this.Cell4ProgBar.Location = new System.Drawing.Point(62, 113);
+            this.Cell4ProgBar.Maximum = 4300;
+            this.Cell4ProgBar.Name = "Cell4ProgBar";
+            this.Cell4ProgBar.Size = new System.Drawing.Size(100, 23);
+            this.Cell4ProgBar.TabIndex = 85;
+            // 
+            // Cell3ProgBar
+            // 
+            this.Cell3ProgBar.Location = new System.Drawing.Point(62, 84);
+            this.Cell3ProgBar.Maximum = 4300;
+            this.Cell3ProgBar.Name = "Cell3ProgBar";
+            this.Cell3ProgBar.Size = new System.Drawing.Size(100, 23);
+            this.Cell3ProgBar.TabIndex = 83;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(11, 113);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(45, 18);
+            this.label36.TabIndex = 84;
+            this.label36.Text = "Cell 4";
+            // 
             // ManufDateText
             // 
-            this.ManufDateText.Location = new System.Drawing.Point(389, 169);
+            this.ManufDateText.Enabled = false;
+            this.ManufDateText.Location = new System.Drawing.Point(428, 170);
             this.ManufDateText.Name = "ManufDateText";
-            this.ManufDateText.Size = new System.Drawing.Size(86, 20);
+            this.ManufDateText.Size = new System.Drawing.Size(124, 20);
             this.ManufDateText.TabIndex = 74;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(254, 173);
+            this.label30.Location = new System.Drawing.Point(293, 174);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(66, 13);
             this.label30.TabIndex = 73;
@@ -342,15 +435,16 @@
             // 
             // SpecInfoText
             // 
-            this.SpecInfoText.Location = new System.Drawing.Point(389, 143);
+            this.SpecInfoText.Enabled = false;
+            this.SpecInfoText.Location = new System.Drawing.Point(428, 144);
             this.SpecInfoText.Name = "SpecInfoText";
-            this.SpecInfoText.Size = new System.Drawing.Size(86, 20);
+            this.SpecInfoText.Size = new System.Drawing.Size(124, 20);
             this.SpecInfoText.TabIndex = 72;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(254, 147);
+            this.label31.Location = new System.Drawing.Point(293, 148);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(56, 13);
             this.label31.TabIndex = 71;
@@ -358,15 +452,16 @@
             // 
             // DesVoltageText
             // 
-            this.DesVoltageText.Location = new System.Drawing.Point(389, 117);
+            this.DesVoltageText.Enabled = false;
+            this.DesVoltageText.Location = new System.Drawing.Point(428, 118);
             this.DesVoltageText.Name = "DesVoltageText";
-            this.DesVoltageText.Size = new System.Drawing.Size(86, 20);
+            this.DesVoltageText.Size = new System.Drawing.Size(124, 20);
             this.DesVoltageText.TabIndex = 70;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(254, 121);
+            this.label32.Location = new System.Drawing.Point(293, 122);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(79, 13);
             this.label32.TabIndex = 69;
@@ -374,15 +469,16 @@
             // 
             // DesCapText
             // 
-            this.DesCapText.Location = new System.Drawing.Point(389, 91);
+            this.DesCapText.Enabled = false;
+            this.DesCapText.Location = new System.Drawing.Point(428, 92);
             this.DesCapText.Name = "DesCapText";
-            this.DesCapText.Size = new System.Drawing.Size(86, 20);
+            this.DesCapText.Size = new System.Drawing.Size(124, 20);
             this.DesCapText.TabIndex = 68;
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(254, 95);
+            this.label33.Location = new System.Drawing.Point(293, 96);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(84, 13);
             this.label33.TabIndex = 67;
@@ -390,15 +486,16 @@
             // 
             // CycleCountsText
             // 
-            this.CycleCountsText.Location = new System.Drawing.Point(389, 65);
+            this.CycleCountsText.Enabled = false;
+            this.CycleCountsText.Location = new System.Drawing.Point(428, 66);
             this.CycleCountsText.Name = "CycleCountsText";
-            this.CycleCountsText.Size = new System.Drawing.Size(86, 20);
+            this.CycleCountsText.Size = new System.Drawing.Size(124, 20);
             this.CycleCountsText.TabIndex = 66;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(254, 69);
+            this.label34.Location = new System.Drawing.Point(293, 70);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(69, 13);
             this.label34.TabIndex = 65;
@@ -406,15 +503,16 @@
             // 
             // BatteryStatusText
             // 
-            this.BatteryStatusText.Location = new System.Drawing.Point(389, 39);
+            this.BatteryStatusText.Enabled = false;
+            this.BatteryStatusText.Location = new System.Drawing.Point(428, 40);
             this.BatteryStatusText.Name = "BatteryStatusText";
-            this.BatteryStatusText.Size = new System.Drawing.Size(86, 20);
+            this.BatteryStatusText.Size = new System.Drawing.Size(124, 20);
             this.BatteryStatusText.TabIndex = 64;
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(254, 43);
+            this.label35.Location = new System.Drawing.Point(293, 44);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(73, 13);
             this.label35.TabIndex = 63;
@@ -422,9 +520,10 @@
             // 
             // ChargeVoltageText
             // 
+            this.ChargeVoltageText.Enabled = false;
             this.ChargeVoltageText.Location = new System.Drawing.Point(142, 557);
             this.ChargeVoltageText.Name = "ChargeVoltageText";
-            this.ChargeVoltageText.Size = new System.Drawing.Size(86, 20);
+            this.ChargeVoltageText.Size = new System.Drawing.Size(124, 20);
             this.ChargeVoltageText.TabIndex = 62;
             // 
             // label26
@@ -438,9 +537,10 @@
             // 
             // ChargeCurrentText
             // 
+            this.ChargeCurrentText.Enabled = false;
             this.ChargeCurrentText.Location = new System.Drawing.Point(142, 531);
             this.ChargeCurrentText.Name = "ChargeCurrentText";
-            this.ChargeCurrentText.Size = new System.Drawing.Size(86, 20);
+            this.ChargeCurrentText.Size = new System.Drawing.Size(124, 20);
             this.ChargeCurrentText.TabIndex = 60;
             // 
             // label21
@@ -454,9 +554,10 @@
             // 
             // AvgTTFullText
             // 
+            this.AvgTTFullText.Enabled = false;
             this.AvgTTFullText.Location = new System.Drawing.Point(142, 505);
             this.AvgTTFullText.Name = "AvgTTFullText";
-            this.AvgTTFullText.Size = new System.Drawing.Size(86, 20);
+            this.AvgTTFullText.Size = new System.Drawing.Size(124, 20);
             this.AvgTTFullText.TabIndex = 58;
             // 
             // label22
@@ -470,9 +571,10 @@
             // 
             // AvgTTEmptyText
             // 
+            this.AvgTTEmptyText.Enabled = false;
             this.AvgTTEmptyText.Location = new System.Drawing.Point(142, 479);
             this.AvgTTEmptyText.Name = "AvgTTEmptyText";
-            this.AvgTTEmptyText.Size = new System.Drawing.Size(86, 20);
+            this.AvgTTEmptyText.Size = new System.Drawing.Size(124, 20);
             this.AvgTTEmptyText.TabIndex = 56;
             // 
             // label23
@@ -486,9 +588,10 @@
             // 
             // RunTTEmptyText
             // 
+            this.RunTTEmptyText.Enabled = false;
             this.RunTTEmptyText.Location = new System.Drawing.Point(142, 453);
             this.RunTTEmptyText.Name = "RunTTEmptyText";
-            this.RunTTEmptyText.Size = new System.Drawing.Size(86, 20);
+            this.RunTTEmptyText.Size = new System.Drawing.Size(124, 20);
             this.RunTTEmptyText.TabIndex = 54;
             // 
             // label24
@@ -502,9 +605,10 @@
             // 
             // FullChargeCapText
             // 
+            this.FullChargeCapText.Enabled = false;
             this.FullChargeCapText.Location = new System.Drawing.Point(142, 427);
             this.FullChargeCapText.Name = "FullChargeCapText";
-            this.FullChargeCapText.Size = new System.Drawing.Size(86, 20);
+            this.FullChargeCapText.Size = new System.Drawing.Size(124, 20);
             this.FullChargeCapText.TabIndex = 52;
             // 
             // label25
@@ -518,9 +622,10 @@
             // 
             // RemCapacityText
             // 
+            this.RemCapacityText.Enabled = false;
             this.RemCapacityText.Location = new System.Drawing.Point(142, 402);
             this.RemCapacityText.Name = "RemCapacityText";
-            this.RemCapacityText.Size = new System.Drawing.Size(86, 20);
+            this.RemCapacityText.Size = new System.Drawing.Size(124, 20);
             this.RemCapacityText.TabIndex = 50;
             // 
             // label16
@@ -534,9 +639,10 @@
             // 
             // AbsSoCText
             // 
+            this.AbsSoCText.Enabled = false;
             this.AbsSoCText.Location = new System.Drawing.Point(142, 376);
             this.AbsSoCText.Name = "AbsSoCText";
-            this.AbsSoCText.Size = new System.Drawing.Size(86, 20);
+            this.AbsSoCText.Size = new System.Drawing.Size(124, 20);
             this.AbsSoCText.TabIndex = 48;
             // 
             // label17
@@ -550,9 +656,10 @@
             // 
             // RefSoCText
             // 
+            this.RefSoCText.Enabled = false;
             this.RefSoCText.Location = new System.Drawing.Point(142, 350);
             this.RefSoCText.Name = "RefSoCText";
-            this.RefSoCText.Size = new System.Drawing.Size(86, 20);
+            this.RefSoCText.Size = new System.Drawing.Size(124, 20);
             this.RefSoCText.TabIndex = 46;
             // 
             // label18
@@ -566,9 +673,10 @@
             // 
             // MaxErrorText
             // 
+            this.MaxErrorText.Enabled = false;
             this.MaxErrorText.Location = new System.Drawing.Point(142, 324);
             this.MaxErrorText.Name = "MaxErrorText";
-            this.MaxErrorText.Size = new System.Drawing.Size(86, 20);
+            this.MaxErrorText.Size = new System.Drawing.Size(124, 20);
             this.MaxErrorText.TabIndex = 44;
             // 
             // label19
@@ -582,9 +690,10 @@
             // 
             // AvgCurrentText
             // 
+            this.AvgCurrentText.Enabled = false;
             this.AvgCurrentText.Location = new System.Drawing.Point(142, 298);
             this.AvgCurrentText.Name = "AvgCurrentText";
-            this.AvgCurrentText.Size = new System.Drawing.Size(86, 20);
+            this.AvgCurrentText.Size = new System.Drawing.Size(124, 20);
             this.AvgCurrentText.TabIndex = 42;
             // 
             // label20
@@ -598,9 +707,10 @@
             // 
             // CurrentText
             // 
+            this.CurrentText.Enabled = false;
             this.CurrentText.Location = new System.Drawing.Point(142, 272);
             this.CurrentText.Name = "CurrentText";
-            this.CurrentText.Size = new System.Drawing.Size(86, 20);
+            this.CurrentText.Size = new System.Drawing.Size(124, 20);
             this.CurrentText.TabIndex = 40;
             // 
             // label11
@@ -614,9 +724,10 @@
             // 
             // VoltageText
             // 
+            this.VoltageText.Enabled = false;
             this.VoltageText.Location = new System.Drawing.Point(142, 246);
             this.VoltageText.Name = "VoltageText";
-            this.VoltageText.Size = new System.Drawing.Size(86, 20);
+            this.VoltageText.Size = new System.Drawing.Size(124, 20);
             this.VoltageText.TabIndex = 38;
             // 
             // label12
@@ -630,9 +741,10 @@
             // 
             // TempText
             // 
+            this.TempText.Enabled = false;
             this.TempText.Location = new System.Drawing.Point(142, 220);
             this.TempText.Name = "TempText";
-            this.TempText.Size = new System.Drawing.Size(86, 20);
+            this.TempText.Size = new System.Drawing.Size(124, 20);
             this.TempText.TabIndex = 36;
             // 
             // label13
@@ -646,9 +758,10 @@
             // 
             // AtRateOKText
             // 
+            this.AtRateOKText.Enabled = false;
             this.AtRateOKText.Location = new System.Drawing.Point(142, 194);
             this.AtRateOKText.Name = "AtRateOKText";
-            this.AtRateOKText.Size = new System.Drawing.Size(86, 20);
+            this.AtRateOKText.Size = new System.Drawing.Size(124, 20);
             this.AtRateOKText.TabIndex = 34;
             // 
             // label14
@@ -662,9 +775,10 @@
             // 
             // AtRateTTEmptyText
             // 
+            this.AtRateTTEmptyText.Enabled = false;
             this.AtRateTTEmptyText.Location = new System.Drawing.Point(142, 168);
             this.AtRateTTEmptyText.Name = "AtRateTTEmptyText";
-            this.AtRateTTEmptyText.Size = new System.Drawing.Size(86, 20);
+            this.AtRateTTEmptyText.Size = new System.Drawing.Size(124, 20);
             this.AtRateTTEmptyText.TabIndex = 32;
             // 
             // label15
@@ -678,9 +792,10 @@
             // 
             // AtRateTTFullText
             // 
+            this.AtRateTTFullText.Enabled = false;
             this.AtRateTTFullText.Location = new System.Drawing.Point(142, 142);
             this.AtRateTTFullText.Name = "AtRateTTFullText";
-            this.AtRateTTFullText.Size = new System.Drawing.Size(86, 20);
+            this.AtRateTTFullText.Size = new System.Drawing.Size(124, 20);
             this.AtRateTTFullText.TabIndex = 30;
             // 
             // label6
@@ -694,9 +809,10 @@
             // 
             // AtRateText
             // 
+            this.AtRateText.Enabled = false;
             this.AtRateText.Location = new System.Drawing.Point(142, 116);
             this.AtRateText.Name = "AtRateText";
-            this.AtRateText.Size = new System.Drawing.Size(86, 20);
+            this.AtRateText.Size = new System.Drawing.Size(124, 20);
             this.AtRateText.TabIndex = 28;
             // 
             // label7
@@ -710,9 +826,10 @@
             // 
             // BatteryModeText
             // 
+            this.BatteryModeText.Enabled = false;
             this.BatteryModeText.Location = new System.Drawing.Point(142, 90);
             this.BatteryModeText.Name = "BatteryModeText";
-            this.BatteryModeText.Size = new System.Drawing.Size(86, 20);
+            this.BatteryModeText.Size = new System.Drawing.Size(124, 20);
             this.BatteryModeText.TabIndex = 26;
             // 
             // label8
@@ -726,9 +843,10 @@
             // 
             // RemTimeAlarmText
             // 
+            this.RemTimeAlarmText.Enabled = false;
             this.RemTimeAlarmText.Location = new System.Drawing.Point(142, 64);
             this.RemTimeAlarmText.Name = "RemTimeAlarmText";
-            this.RemTimeAlarmText.Size = new System.Drawing.Size(86, 20);
+            this.RemTimeAlarmText.Size = new System.Drawing.Size(124, 20);
             this.RemTimeAlarmText.TabIndex = 24;
             // 
             // label9
@@ -742,9 +860,10 @@
             // 
             // RemCapAlarmText
             // 
+            this.RemCapAlarmText.Enabled = false;
             this.RemCapAlarmText.Location = new System.Drawing.Point(142, 38);
             this.RemCapAlarmText.Name = "RemCapAlarmText";
-            this.RemCapAlarmText.Size = new System.Drawing.Size(86, 20);
+            this.RemCapAlarmText.Size = new System.Drawing.Size(124, 20);
             this.RemCapAlarmText.TabIndex = 22;
             // 
             // label10
@@ -773,6 +892,17 @@
             this.ControlGroupBox.TabStop = false;
             this.ControlGroupBox.Text = "SMBus (I²C) Device-/Bridge Control";
             // 
+            // SMBusAddressSelectButton
+            // 
+            this.SMBusAddressSelectButton.Enabled = false;
+            this.SMBusAddressSelectButton.Location = new System.Drawing.Point(622, 10);
+            this.SMBusAddressSelectButton.Name = "SMBusAddressSelectButton";
+            this.SMBusAddressSelectButton.Size = new System.Drawing.Size(90, 51);
+            this.SMBusAddressSelectButton.TabIndex = 88;
+            this.SMBusAddressSelectButton.Text = "Select Address";
+            this.SMBusAddressSelectButton.UseVisualStyleBackColor = true;
+            this.SMBusAddressSelectButton.Click += new System.EventHandler(this.SMBusAddressSelectButton_Click);
+            // 
             // StatusButton
             // 
             this.StatusButton.Enabled = false;
@@ -785,6 +915,18 @@
             this.StatusButton.UseVisualStyleBackColor = true;
             this.StatusButton.Click += new System.EventHandler(this.StatusButton_Click);
             // 
+            // SMBusAddressComboBox
+            // 
+            this.SMBusAddressComboBox.DropDownHeight = 93;
+            this.SMBusAddressComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SMBusAddressComboBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SMBusAddressComboBox.FormattingEnabled = true;
+            this.SMBusAddressComboBox.IntegralHeight = false;
+            this.SMBusAddressComboBox.Location = new System.Drawing.Point(560, 21);
+            this.SMBusAddressComboBox.Name = "SMBusAddressComboBox";
+            this.SMBusAddressComboBox.Size = new System.Drawing.Size(56, 29);
+            this.SMBusAddressComboBox.TabIndex = 87;
+            // 
             // ResetButton
             // 
             this.ResetButton.Enabled = false;
@@ -796,6 +938,17 @@
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
             this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            // 
+            // ScanSMBusButton
+            // 
+            this.ScanSMBusButton.Enabled = false;
+            this.ScanSMBusButton.Location = new System.Drawing.Point(465, 10);
+            this.ScanSMBusButton.Name = "ScanSMBusButton";
+            this.ScanSMBusButton.Size = new System.Drawing.Size(90, 51);
+            this.ScanSMBusButton.TabIndex = 86;
+            this.ScanSMBusButton.Text = "Scan SMBus";
+            this.ScanSMBusButton.UseVisualStyleBackColor = true;
+            this.ScanSMBusButton.Click += new System.EventHandler(this.ScanSMBusButton_Click);
             // 
             // RefreshButton
             // 
@@ -812,11 +965,11 @@
             // COMPortsComboBox
             // 
             this.COMPortsComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.COMPortsComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.COMPortsComboBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.COMPortsComboBox.FormattingEnabled = true;
-            this.COMPortsComboBox.Location = new System.Drawing.Point(9, 28);
+            this.COMPortsComboBox.Location = new System.Drawing.Point(9, 21);
             this.COMPortsComboBox.Name = "COMPortsComboBox";
-            this.COMPortsComboBox.Size = new System.Drawing.Size(238, 23);
+            this.COMPortsComboBox.Size = new System.Drawing.Size(238, 29);
             this.COMPortsComboBox.TabIndex = 1;
             // 
             // ConnectButton
@@ -876,6 +1029,7 @@
             // 
             // BattSerialNoText
             // 
+            this.BattSerialNoText.Enabled = false;
             this.BattSerialNoText.Location = new System.Drawing.Point(98, 120);
             this.BattSerialNoText.Name = "BattSerialNoText";
             this.BattSerialNoText.Size = new System.Drawing.Size(131, 20);
@@ -892,6 +1046,7 @@
             // 
             // ManufDataText
             // 
+            this.ManufDataText.Enabled = false;
             this.ManufDataText.Location = new System.Drawing.Point(98, 94);
             this.ManufDataText.Name = "ManufDataText";
             this.ManufDataText.Size = new System.Drawing.Size(131, 20);
@@ -908,6 +1063,7 @@
             // 
             // DevChemText
             // 
+            this.DevChemText.Enabled = false;
             this.DevChemText.Location = new System.Drawing.Point(98, 68);
             this.DevChemText.Name = "DevChemText";
             this.DevChemText.Size = new System.Drawing.Size(131, 20);
@@ -924,6 +1080,7 @@
             // 
             // ManufNameText
             // 
+            this.ManufNameText.Enabled = false;
             this.ManufNameText.Location = new System.Drawing.Point(98, 42);
             this.ManufNameText.Name = "ManufNameText";
             this.ManufNameText.Size = new System.Drawing.Size(131, 20);
@@ -940,6 +1097,7 @@
             // 
             // ReadBatteryDataButton
             // 
+            this.ReadBatteryDataButton.Enabled = false;
             this.ReadBatteryDataButton.Location = new System.Drawing.Point(55, 166);
             this.ReadBatteryDataButton.Name = "ReadBatteryDataButton";
             this.ReadBatteryDataButton.Size = new System.Drawing.Size(112, 46);
@@ -950,6 +1108,7 @@
             // 
             // DevNameText
             // 
+            this.DevNameText.Enabled = false;
             this.DevNameText.Location = new System.Drawing.Point(98, 16);
             this.DevNameText.Name = "DevNameText";
             this.DevNameText.Size = new System.Drawing.Size(131, 20);
@@ -1255,6 +1414,7 @@
             this.DebugGroupBox.Controls.Add(this.ReadROMDescriptionLabel);
             this.DebugGroupBox.Controls.Add(this.ReadROMByBytesCheckBox);
             this.DebugGroupBox.Controls.Add(this.ReadROMButton);
+            this.DebugGroupBox.Enabled = false;
             this.DebugGroupBox.Location = new System.Drawing.Point(11, 14);
             this.DebugGroupBox.Name = "DebugGroupBox";
             this.DebugGroupBox.Size = new System.Drawing.Size(541, 253);
@@ -1357,44 +1517,57 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // SMBusAddressSelectButton
+            // label37
             // 
-            this.SMBusAddressSelectButton.Enabled = false;
-            this.SMBusAddressSelectButton.Location = new System.Drawing.Point(603, 10);
-            this.SMBusAddressSelectButton.Name = "SMBusAddressSelectButton";
-            this.SMBusAddressSelectButton.Size = new System.Drawing.Size(90, 51);
-            this.SMBusAddressSelectButton.TabIndex = 88;
-            this.SMBusAddressSelectButton.Text = "Select Address";
-            this.SMBusAddressSelectButton.UseVisualStyleBackColor = true;
-            this.SMBusAddressSelectButton.Click += new System.EventHandler(this.SMBusAddressSelectButton_Click);
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(11, 32);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(91, 13);
+            this.label37.TabIndex = 1;
+            this.label37.Text = "Remaining Health";
             // 
-            // SMBusAddressComboBox
+            // label38
             // 
-            this.SMBusAddressComboBox.DropDownHeight = 93;
-            this.SMBusAddressComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.SMBusAddressComboBox.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SMBusAddressComboBox.FormattingEnabled = true;
-            this.SMBusAddressComboBox.IntegralHeight = false;
-            this.SMBusAddressComboBox.Location = new System.Drawing.Point(560, 11);
-            this.SMBusAddressComboBox.Name = "SMBusAddressComboBox";
-            this.SMBusAddressComboBox.Size = new System.Drawing.Size(37, 23);
-            this.SMBusAddressComboBox.TabIndex = 87;
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(11, 81);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(101, 13);
+            this.label38.TabIndex = 3;
+            this.label38.Text = "Remaining Capacity";
             // 
-            // ScanSMBusButton
+            // ProgBarCap
             // 
-            this.ScanSMBusButton.Location = new System.Drawing.Point(465, 10);
-            this.ScanSMBusButton.Name = "ScanSMBusButton";
-            this.ScanSMBusButton.Size = new System.Drawing.Size(90, 51);
-            this.ScanSMBusButton.TabIndex = 86;
-            this.ScanSMBusButton.Text = "Scan SMBus";
-            this.ScanSMBusButton.UseVisualStyleBackColor = true;
-            this.ScanSMBusButton.Click += new System.EventHandler(this.ScanSMBusButton_Click);
+            this.ProgBarCap.Location = new System.Drawing.Point(11, 97);
+            this.ProgBarCap.Name = "ProgBarCap";
+            this.ProgBarCap.Size = new System.Drawing.Size(218, 20);
+            this.ProgBarCap.Step = 1;
+            this.ProgBarCap.TabIndex = 2;
+            // 
+            // BattHealthLabel
+            // 
+            this.BattHealthLabel.AutoSize = true;
+            this.BattHealthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BattHealthLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BattHealthLabel.Location = new System.Drawing.Point(109, 51);
+            this.BattHealthLabel.Name = "BattHealthLabel";
+            this.BattHealthLabel.Size = new System.Drawing.Size(0, 13);
+            this.BattHealthLabel.TabIndex = 4;
+            // 
+            // RemCapLabel
+            // 
+            this.RemCapLabel.AutoSize = true;
+            this.RemCapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemCapLabel.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.RemCapLabel.Location = new System.Drawing.Point(110, 100);
+            this.RemCapLabel.Name = "RemCapLabel";
+            this.RemCapLabel.Size = new System.Drawing.Size(0, 13);
+            this.RemCapLabel.TabIndex = 5;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 808);
+            this.ClientSize = new System.Drawing.Size(969, 794);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -1407,6 +1580,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ControlGroupBox.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
@@ -1555,6 +1732,18 @@
         private System.Windows.Forms.Button SMBusAddressSelectButton;
         private System.Windows.Forms.ComboBox SMBusAddressComboBox;
         private System.Windows.Forms.Button ScanSMBusButton;
+        private System.Windows.Forms.Label Cell4VLabel;
+        private System.Windows.Forms.Label Cell3VLabel;
+        private System.Windows.Forms.Label Cell2VLabel;
+        private System.Windows.Forms.Label Cell1VLabel;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ProgressBar ProgBarHealth;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ProgressBar ProgBarCap;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label RemCapLabel;
+        private System.Windows.Forms.Label BattHealthLabel;
     }
 }
 

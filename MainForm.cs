@@ -29,6 +29,7 @@ namespace SmartBatteryRepair
         public byte[] HandshakeRequest = new byte[] { 0x3D, 0x00, 0x02, 0x01, 0x00, 0x03 };
         public byte[] ExpectedHandshake = new byte[] { 0x3D, 0x00, 0x08, 0x81, 0x00, 0x53, 0x42, 0x48, 0x41, 0x43, 0x4B, 0x35 };
         public byte[] CurrentSettingsRequest = new byte[] { 0x3D, 0x00, 0x02, 0x03, 0x01, 0x06 };
+        public int DesCapmAh, RemCapmAh, FullChCapmAh;
 
         AboutForm about;
         SerialPort Serial = new SerialPort();
@@ -72,7 +73,7 @@ namespace SmartBatteryRepair
             ReadRegisterComboBox.SelectedIndex = 0;
             WriteRegisterComboBox.SelectedIndex = 0;
             WordByteOrderComboBox.SelectedIndex = 3;
-
+            
             ActiveControl = ConnectButton; // put focus on the connect button
         }
 
@@ -113,7 +114,7 @@ namespace SmartBatteryRepair
             }
             else
             {
-                COMPortsComboBox.Items.Add("N/A");
+                COMPortsComboBox.Items.Add("No COM-ports Found");
                 SerialPortAvailable = false;
                 ConnectButton.Enabled = false;
                 COMPortsComboBox.SelectedIndex = 0; // select "N/A"
@@ -215,13 +216,13 @@ namespace SmartBatteryRepair
                                 if (DeviceFound)
                                 {
                                     Util.UpdateTextBox(CommunicationTextBox, "[RX->] Handshake response", ExpectedHandshake);
-                                    Util.UpdateTextBox(CommunicationTextBox, "[INFO] Handshake OK: SBHACK", null);
+                                    Util.UpdateTextBox(CommunicationTextBox, "[INFO] Handshake OK", null);
                                     Util.UpdateTextBox(CommunicationTextBox, "[INFO] Device connected (" + Serial.PortName + ")", null);
                                     toolStripStatusLabel1.Text = "Connected to device on port: " + Serial.PortName;
                                     ConnectButton.Text = "Disconnect";
                                     StatusButton.Enabled = true;
                                     ResetButton.Enabled = true;
-                                    ToolsGroupBox.Enabled = true;
+                                    ScanSMBusButton.Enabled = true;
                                     Serial.DataReceived += new SerialDataReceivedEventHandler(SerialDataReceivedHandler);
                                     Serial.Write(CurrentSettingsRequest, 0, CurrentSettingsRequest.Length);
                                     break; // exit while-loop
@@ -254,6 +255,12 @@ namespace SmartBatteryRepair
                     StatusButton.Enabled = false;
                     ResetButton.Enabled = false;
                     ToolsGroupBox.Enabled = false;
+                    RefreshButton.Enabled = false;
+                    ReadBatteryDataButton.Enabled = false;
+                    ScanSMBusButton.Enabled = false;
+                    SMBusAddressSelectButton.Enabled = false;
+                    CommunicationGroupBox.Enabled = false;
+                    DebugGroupBox.Enabled = false;
                     Util.UpdateTextBox(CommunicationTextBox, "[INFO] Device disconnected (" + Serial.PortName + ")", null);
                     Serial.DataReceived -= new SerialDataReceivedEventHandler(SerialDataReceivedHandler);
                     toolStripStatusLabel1.Text = "Not currently connected to any device!";
@@ -558,12 +565,13 @@ namespace SmartBatteryRepair
                                                 StringBuilder value = new StringBuilder();
                                                 byte start_reg = Payload[0];
                                                 byte current_reg = 0;
-
+                                                
                                                 for (int i = 0; i < SMBusRegisterDumpList.Count; i++)
                                                 {
                                                     data[0] = (byte)(SMBusRegisterDumpList[i] >> 8 & 0xFF);
                                                     data[1] = (byte)(SMBusRegisterDumpList[i] & 0xFF);
                                                     current_reg = (byte)(i + start_reg);
+                                                    
                                                     value.Append("[" + Util.ByteToHexString(new byte[] { current_reg }, 0, 1) + "]: " + Util.ByteToHexString(data, 0, data.Length) + " // ");
 
                                                     switch (current_reg)
@@ -601,7 +609,8 @@ namespace SmartBatteryRepair
                                                             break;
                                                         case 0x08:
                                                             Double Temperature = Math.Round((SMBusRegisterDumpList[i] - 273.15) / 100, 2);
-                                                            value.Append("Temperature: " + Temperature + "°C");
+                                                            //value.Append("Temperature: " + Temperature + "°C");
+                                                            Util.UpdateTextField(TempText, Convert.ToString(Temperature), null);
                                                             break;
                                                         case 0x09:
                                                             Double Voltage = SMBusRegisterDumpList[i] / 1000D;
@@ -625,10 +634,13 @@ namespace SmartBatteryRepair
                                                             value.Append("AbsoluteStateOfCharge: " + SMBusRegisterDumpList[i].ToString() + "%");
                                                             break;
                                                         case 0x0F:
-                                                            value.Append("RemainingCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            //value.Append("RemainingCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            RemCapmAh = SMBusRegisterDumpList[i];
+                                                            Util.UpdateTextBox(CommunicationTextBox, "RemCap: " + SMBusRegisterDumpList[i], null);
                                                             break;
                                                         case 0x10:
-                                                            value.Append("FullChargeCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            //value.Append("FullChargeCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            FullChCapmAh = SMBusRegisterDumpList[i];
                                                             break;
                                                         case 0x11:
                                                             value.Append("RunTimeToEmpty: " + SMBusRegisterDumpList[i].ToString() + " minutes");
@@ -655,7 +667,8 @@ namespace SmartBatteryRepair
                                                             Util.UpdateTextField(CycleCountsText, SMBusRegisterDumpList[i].ToString(), null);
                                                             break;
                                                         case 0x18:
-                                                            value.Append("DesignCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            //value.Append("DesignCapacity: " + SMBusRegisterDumpList[i].ToString() + " mAh");
+                                                            DesCapmAh = SMBusRegisterDumpList[i];
                                                             break;
                                                         case 0x19:
                                                             DesignVoltage = SMBusRegisterDumpList[i];
@@ -693,6 +706,32 @@ namespace SmartBatteryRepair
                                                             //value.Append("ManufacturerData: " + Util.ByteToHexString(data, 0, data.Length));
                                                             Util.UpdateTextField(ManufDataText, Util.ByteToHexString(data, 0, data.Length), null);
                                                             break;
+                                                        case 0x3F:
+                                                            string Cell1Volts = Convert.ToString(SMBusRegisterDumpList[i], 2);
+                                                            int C1Volts = Convert.ToInt32(Cell1Volts, 2);
+                                                            Util.UpdateLabel(Cell1VLabel, Convert.ToString(C1Volts), " mV");
+                                                            Util.UpdateProgBar(Cell1ProgBar, C1Volts);
+                                                            //long Cell1 = Convert.ToInt16(Cell1Volts);
+                                                            //Util.UpdateLabel(Cell1VLabel, Convert.ToString(Cell1), null);
+                                                            break;
+                                                        case 0x3E:
+                                                            string Cell2Volts = Convert.ToString(SMBusRegisterDumpList[i], 2);
+                                                            int C2Volts = Convert.ToInt32(Cell2Volts, 2);
+                                                            Util.UpdateLabel(Cell2VLabel, Convert.ToString(C2Volts), " mV");
+                                                            Util.UpdateProgBar(Cell2ProgBar, C2Volts);
+                                                            break;
+                                                        case 0x3D:
+                                                            string Cell3Volts = Convert.ToString(SMBusRegisterDumpList[i], 2);
+                                                            int C3Volts = Convert.ToInt32(Cell3Volts, 2);
+                                                            Util.UpdateLabel(Cell3VLabel, Convert.ToString(C3Volts), " mV");
+                                                            Util.UpdateProgBar(Cell3ProgBar, C3Volts);
+                                                            break;
+                                                        case 0x3C:
+                                                            string Cell4Volts = Convert.ToString(SMBusRegisterDumpList[i], 2);
+                                                            int C4Volts = Convert.ToInt32(Cell4Volts, 2);
+                                                            Util.UpdateLabel(Cell4VLabel, Convert.ToString(C4Volts), " mV");
+                                                            Util.UpdateProgBar(Cell4ProgBar, C4Volts);
+                                                            break;
                                                         default:
                                                             value.Append(Util.ByteToHexString(data, 0, data.Length));
                                                             break;
@@ -700,6 +739,14 @@ namespace SmartBatteryRepair
 
                                                     if (i != (SMBusRegisterDumpList.Count - 1)) value.Append(Environment.NewLine);
                                                 }
+                                                int BattHealthValue, RemCapPercent;
+                                                BattHealthValue = Convert.ToInt16(Convert.ToDouble(FullChCapmAh) / Convert.ToDouble(DesCapmAh) * 100);
+                                                RemCapPercent = Convert.ToInt16(Convert.ToDouble(RemCapmAh) / Convert.ToDouble(FullChCapmAh) * 100);
+                                                //Util.SetProgBarMax(ProgBarHealth, Convert.ToInt16(FullChCapmAh));
+                                                Util.UpdateProgBar(ProgBarHealth, BattHealthValue);
+                                                Util.UpdateProgBar(ProgBarCap, RemCapPercent);
+                                                Util.UpdateLabel(BattHealthLabel, Convert.ToString(BattHealthValue), "%");
+                                                Util.UpdateLabel(RemCapLabel, Convert.ToString(RemCapPercent), "%");
 
                                                 Util.UpdateTextBox(CommunicationTextBox, "[INFO] SMBus register dump details (" + Util.ByteToHexString(Payload, 0, 1) + "-" + Util.ByteToHexString(Payload, 1, 2) + "):" + Environment.NewLine + value.ToString(), null);
                                             }
@@ -1046,9 +1093,12 @@ namespace SmartBatteryRepair
 
         private void ScanSMBusButton_Click(object sender, EventArgs e)
         {
-            byte[] ScanSMBus = new byte[] { 0x3D, 0x00, 0x02, 0x02, 0x02, 0x06 }; // scan SMBus
-            Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Scan SMBus", ScanSMBus);
-            Serial.Write(ScanSMBus, 0, ScanSMBus.Length);
+            if (Serial.IsOpen)
+            {
+                byte[] ScanSMBus = new byte[] { 0x3D, 0x00, 0x02, 0x02, 0x02, 0x06 }; // scan SMBus
+                Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Scan SMBus", ScanSMBus);
+                Serial.Write(ScanSMBus, 0, ScanSMBus.Length);
+            }
         }
 
         private void SMBusAddressSelectButton_Click(object sender, EventArgs e)
@@ -1080,6 +1130,9 @@ namespace SmartBatteryRepair
                 byte[] SelectSMBusAddress = packet.ToArray();
                 Util.UpdateTextBox(CommunicationTextBox, "[<-TX] Select SMBus address", SelectSMBusAddress);
                 Serial.Write(SelectSMBusAddress, 0, SelectSMBusAddress.Length);
+                ReadBatteryDataButton.Enabled = true;
+                DebugGroupBox.Enabled = true;
+                ToolsGroupBox.Enabled = true;
             }
         }
 
@@ -1368,7 +1421,7 @@ namespace SmartBatteryRepair
             try
             {
                 reg[0] = 0x00;
-                reg[1] = 0x25;
+                reg[1] = 0x55;
             }
             catch
             {
