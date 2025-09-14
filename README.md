@@ -22,7 +22,7 @@ Simple; We do not support the manufacturers opinion of us *nefariously hacking* 
 ![This is the old layout](images/Old-GUI.png)
 
 > My new, tabbed, interface (earliest "sketch"):  
-![The first layout-test of my interface](images/New-tabbed-interface.png)
+![The first layout-test of my interface](images/SmartBatteryRepair.jpg)
 
 ___
 

@@ -225,5 +225,16 @@ namespace SmartBatteryRepair
             if (string.IsNullOrEmpty(value)) return value;
             return value.Length <= maxLength ? value : value.Substring(0, maxLength);
         }
+
+        // Determine the maximum cell imbalance in battery
+        public static int CellImbalance(int[] values, int cells)
+        {
+            int smallest, largest, diff;
+            Array.Sort(values);
+            smallest = Convert.ToInt16(values.First());
+            largest = Convert.ToInt16(values.Last());
+            diff = largest - smallest;
+            return diff;
+        }
     }
 }
